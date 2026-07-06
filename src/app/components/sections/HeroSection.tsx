@@ -246,13 +246,13 @@ export function HeroSection() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white relative z-10">
               <div>
                 <div className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-[#D4A574] mb-1">
-                  <CountUp end={15} suffix="+" />
+                  <CountUp end={10} suffix="+" />
                 </div>
                 <div className="text-[10px] uppercase tracking-widest opacity-80">Años de Exp.</div>
               </div>
               <div>
                 <div className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-[#D4A574] mb-1">
-                  <CountUp end={3000} suffix="+" />
+                  <CountUp end={300} suffix="+" />
                 </div>
                 <div className="text-[10px] uppercase tracking-widest opacity-80">Estudiantes</div>
               </div>
@@ -264,7 +264,7 @@ export function HeroSection() {
               </div>
               <div>
                 <div className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-[#D4A574] mb-1">
-                  <CountUp end={100} suffix="+" />
+                  <CountUp end={20} suffix="+" />
                 </div>
                 <div className="text-[10px] uppercase tracking-widest opacity-80">Convenios</div>
               </div>
