@@ -1,27 +1,41 @@
 import { useState } from 'react';
 import { 
-  LayoutDashboard, 
-  FileText, 
+  House, 
+  Building2,
+  GraduationCap,
   Users, 
-  Settings, 
+  BookOpen,
+  ShieldCheck,
+  Handshake,
+  Mail,
   LogOut, 
   Search, 
   Bell,
   ChevronRight,
   Edit3,
   Eye,
-  Plus
+  Plus,
+  FileText,
+  LayoutDashboard
 } from 'lucide-react';
 import logoUtom from '../../imports/logo-utom.png';
+import { adminNavigationCategories } from '../data/navigation';
 
-const sections = [
-  { id: 'inicio', name: 'Inicio (Hero)', icon: LayoutDashboard, lastEdit: 'Hace 2 horas' },
-  { id: 'oferta', name: 'Oferta Educativa', icon: FileText, lastEdit: 'Ayer' },
-  { id: 'aspirantes', name: 'Aspirantes', icon: Users, lastEdit: 'Hace 3 días' },
-  { id: 'tramites', name: 'Trámites y Servicios', icon: Settings, lastEdit: 'Hace 1 semana' },
-  { id: 'noticias', name: 'Noticias y Eventos', icon: FileText, lastEdit: 'Hace 4 horas' },
-  { id: 'contacto', name: 'Contacto', icon: Settings, lastEdit: 'Hace 2 semanas' },
-];
+const sectionIcons = {
+  inicio: House,
+  conocenos: Building2,
+  estudiantes: GraduationCap,
+  docentes: Users,
+  oferta: BookOpen,
+  transparencia: ShieldCheck,
+  servicios: Handshake,
+  contacto: Mail,
+} as const;
+
+const sections = adminNavigationCategories.map((category) => ({
+  ...category,
+  icon: sectionIcons[category.id],
+}));
 
 export default function AdminPanel() {
   const [activeTab, setActiveTab] = useState('inicio');

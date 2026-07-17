@@ -21,6 +21,7 @@ export function ContactoSection() {
       setFormData({ nombre: '', correo: '', telefono: '', asunto: 'Informes', mensaje: '' });
     }, 4000);
   };
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -64,7 +65,7 @@ export function ContactoSection() {
           {/* Formulario (Derecha) */}
           <div className="lg:col-span-7 bg-white dark:bg-gray-900 rounded-3xl p-8 lg:p-10 shadow-sm border border-gray-200 dark:border-gray-800 flex flex-col justify-center transition-colors duration-300">
             <h3 className="font-['Montserrat'] font-bold text-[#0F5132] dark:text-[#D4A574] text-2xl mb-6">
-              Envíanos un mensaje
+              Envíanos un correo
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -130,7 +131,7 @@ export function ContactoSection() {
                     <option value="Informes">Información general / Carreras</option>
                     <option value="Admisiones">Proceso de Admisión</option>
                     <option value="Servicios">Servicios Escolares</option>
-                    <option value="Soporte">Bolsa de trabajo / Vinculación</option>
+                    <option value="Soporte">Vinculación</option>
                   </select>
                 </div>
               </div>
@@ -162,10 +163,10 @@ export function ContactoSection() {
                   }`}
                 >
                   {isSubmitted ? (
-                    <span>¡Mensaje enviado con éxito!</span>
+                    <span>¡Correo enviado con éxito!</span>
                   ) : (
                     <>
-                      <span>Enviar Mensaje</span>
+                      <span>Enviar Correo</span>
                       <Send className="w-5 h-5" />
                     </>
                   )}
@@ -216,7 +217,7 @@ export function ContactoSection() {
                     Teléfono
                   </h4>
                   <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400">
-                    (436) 123 4567
+                    +52 (447) 150 8913
                   </p>
                 </div>
               </div>
@@ -230,7 +231,7 @@ export function ContactoSection() {
                     Correo
                   </h4>
                   <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400">
-                    contacto@utom.edu.mx
+                    servicios_escolares@utom.edu.mx
                   </p>
                 </div>
               </div>

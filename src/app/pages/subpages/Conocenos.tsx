@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { Shield, Eye, Heart, CheckCircle2, User, Mail, PhoneCall, Search, MapPin, Building, Globe, GraduationCap } from 'lucide-react';
+import { Shield, Eye, Heart, CheckCircle2, Mail, PhoneCall, Search, MapPin, Building, Globe, GraduationCap } from 'lucide-react';
+import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
+import rectoraImg from '../../../imports/personal/rectora.jpeg';
 
 // ----------------------------------------------------
 // 1. Misión, Visión y Valores Page
@@ -101,9 +103,13 @@ export function ConocenosRectora() {
         {/* Tarjeta de Perfil */}
         <div className="lg:col-span-4 bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 text-center transition-colors duration-300">
           <div className="w-40 h-40 bg-gray-100 dark:bg-gray-800 rounded-full mx-auto flex items-center justify-center mb-6 overflow-hidden border-4 border-[#D4A574]/20">
-            <User className="w-24 h-24 text-gray-400 dark:text-gray-600" />
+            <ImageWithFallback
+              src={rectoraImg}
+              alt="Mtra. Zenaida Salvador Brígido"
+              className="w-full h-full object-cover"
+            />
           </div>
-          <h2 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-1">Mtra. Herlinda Úrsula</h2>
+          <h2 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-1">Mtra. Zenaida Salvador Brígido</h2>
           <p className="font-['Inter'] text-sm font-semibold text-[#D4A574] mb-4">Rectora de la UTOM</p>
           <div className="border-t border-gray-100 dark:border-gray-850 pt-4 mt-4 text-left space-y-3">
             <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
@@ -152,13 +158,13 @@ export function ConocenosDirectorio() {
   ];
 
   const contactos = [
-    { depto: 'Rectoría', titular: 'Mtra. Herlinda Úrsula', cargo: 'Rectora', correo: 'rectoria@utom.edu.mx', ext: '101' },
-    { depto: 'Secretaría Académica', titular: 'Dr. Alejandro Guzmán Ramos', cargo: 'Secretario Académico', correo: 'sec.academica@utom.edu.mx', ext: '102' },
-    { depto: 'Servicios Escolares', titular: 'Lic. Claudia Corona López', cargo: 'Jefa de Control Escolar', correo: 'servicios.escolares@utom.edu.mx', ext: '105' },
-    { depto: 'Vinculación y Extensión', titular: 'Mtro. Luis Fernando Díaz', cargo: 'Director de Vinculación', correo: 'vinculacion@utom.edu.mx', ext: '108' },
-    { depto: 'Administración y Finanzas', titular: 'C.P. Mónica Arriaga Villegas', cargo: 'Directora de Administración', correo: 'administracion@utom.edu.mx', ext: '103' },
-    { depto: 'Soporte Técnico y TI', titular: 'Ing. Javier Esquivel Torres', cargo: 'Jefe de Tecnologías de Información', correo: 'soporte@utom.edu.mx', ext: '112' },
-    { depto: 'Planeación y Evaluación', titular: 'Lic. Ricardo Medina Flores', cargo: 'Jefe de Planeación', correo: 'planeacion@utom.edu.mx', ext: '104' }
+    { depto: 'Rectoría', titular: 'Mtra. Zenaida Salvador Brigido', cargo: 'Rectora', correo: 'zenaida_salvador@utom.edu.mx', ext: '101' },
+    { depto: 'Vinculación', titular: 'Carlos Marín Iniestra', cargo: 'Jefe de Departamento', correo: 'carlos_marin@utom.edu.mx', ext: '108' },
+    { depto: 'Gastronomía', titular: 'Mtro. Juan Carlos Pérez Moreno', cargo: 'Jefe de Departamento', correo: 'juancarlos_perez@utom.edu.mx', ext: '110' },
+    { depto: 'Tecnologías de la Información', titular: 'Ing. Karina Garduño Jiménez', cargo: 'Jefa de Departamento', correo: 'karina_garduno@utom.edu.mx', ext: '112' },
+    { depto: 'Biotecnología', titular: 'Ing. Alejandro Valencia Sánchez', cargo: 'Jefe de Departamento', correo: 'alejandro_valencia@utom.edu.mx', ext: '115' },
+    { depto: 'Servicios Escolares', titular: 'Ing. Socorro Morales Rosas', cargo: 'Jefa de Departamento', correo: 'socorro_morales@utom.edu.mx', ext: '105' },
+    { depto: 'Administración y Finanzas', titular: 'M.C. Ramiro Cruz Ordoñez', cargo: 'Jefe de Departamento', correo: 'ramiro_cruz@utom.edu.mx', ext: '103' }
   ];
 
   const [searchTerm, setSearchTerm] = useState('');

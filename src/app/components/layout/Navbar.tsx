@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { ChevronDown, GraduationCap, Building2 } from 'lucide-react';
+import { navigationLabels, transparencyYears } from '../../data/navigation';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -61,13 +62,13 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 to="/"
                 className="font-['Inter'] text-xs font-semibold h-12 flex items-center border-b-2 border-transparent hover:text-[#D4A574] hover:border-[#D4A574] transition-all duration-300"
               >
-                Inicio
+                {navigationLabels.inicio}
               </Link>
 
               {/* 2. CONÓCENOS */}
               <div className="relative group h-full flex items-center">
                 <button className="flex items-center gap-1 font-['Inter'] text-xs font-semibold text-white hover:text-[#D4A574] transition-colors focus:outline-none cursor-pointer">
-                  <span>Conócenos</span>
+                  <span>{navigationLabels.conocenos}</span>
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-12 left-0 w-64 bg-[#0F5132] dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-xl shadow-xl py-3 z-50 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
@@ -92,7 +93,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               {/* 3. ESTUDIANTES */}
               <div className="relative group h-full flex items-center">
                 <button className="flex items-center gap-1 font-['Inter'] text-xs font-semibold text-white hover:text-[#D4A574] transition-colors focus:outline-none cursor-pointer">
-                  <span>Estudiantes</span>
+                  <span>{navigationLabels.estudiantes}</span>
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-12 left-0 w-64 bg-[#0F5132] dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-xl shadow-xl py-3 z-50 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
@@ -116,13 +117,13 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 to="/docentes"
                 className="font-['Inter'] text-xs font-semibold h-12 flex items-center border-b-2 border-transparent hover:text-[#D4A574] hover:border-[#D4A574] transition-all duration-300"
               >
-                Docentes
+                {navigationLabels.docentes}
               </Link>
 
               {/* 5. OFERTA EDUCATIVA */}
               <div className="relative group h-full flex items-center">
                 <button className="flex items-center gap-1 font-['Inter'] text-xs font-semibold text-white hover:text-[#D4A574] transition-colors focus:outline-none cursor-pointer">
-                  <span>Oferta Educativa</span>
+                  <span>{navigationLabels.oferta}</span>
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-12 left-0 w-80 bg-[#0F5132] dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-xl shadow-xl p-4 z-50 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
@@ -158,11 +159,11 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               {/* 6. TRANSPARENCIA */}
               <div className="relative group h-full flex items-center">
                 <button className="flex items-center gap-1 font-['Inter'] text-xs font-semibold text-white hover:text-[#D4A574] transition-colors focus:outline-none cursor-pointer">
-                  <span>Transparencia</span>
+                  <span>{navigationLabels.transparencia}</span>
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-12 left-0 w-48 bg-[#0F5132] dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-xl shadow-xl py-3 z-50 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-                  {['2022', '2023', '2024', '2025', '2026'].map((y) => (
+                  {transparencyYears.map((y) => (
                     <Link key={y} to={`/transparencia/${y}`} className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
                       Ejercicio Fiscal {y}
                     </Link>
@@ -175,7 +176,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 to="/servicios-vinculacion"
                 className="font-['Inter'] text-xs font-semibold h-12 flex items-center border-b-2 border-transparent hover:text-[#D4A574] hover:border-[#D4A574] transition-all duration-300"
               >
-                Servicios y Vinculación
+                {navigationLabels.servicios}
               </Link>
 
               {/* 8. CONTÁCTANOS */}
@@ -183,7 +184,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 to="/contacto"
                 className="font-['Inter'] text-xs font-semibold h-12 flex items-center border-b-2 border-transparent hover:text-[#D4A574] hover:border-[#D4A574] transition-all duration-300"
               >
-                Contáctanos
+                {navigationLabels.contacto}
               </Link>
             </div>
 
@@ -202,7 +203,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className="font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
             >
-              Inicio
+              {navigationLabels.inicio}
             </Link>
 
             {/* 2. CONÓCENOS */}
@@ -211,7 +212,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 onClick={() => toggleMobileMenu('conocenos')}
                 className="w-full flex items-center justify-between font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
               >
-                <span>Conócenos</span>
+                <span>{navigationLabels.conocenos}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileMenus.conocenos ? 'rotate-180' : ''}`} />
               </button>
               {mobileMenus.conocenos && (
@@ -241,7 +242,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 onClick={() => toggleMobileMenu('estudiantes')}
                 className="w-full flex items-center justify-between font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
               >
-                <span>Estudiantes</span>
+                <span>{navigationLabels.estudiantes}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileMenus.estudiantes ? 'rotate-180' : ''}`} />
               </button>
               {mobileMenus.estudiantes && (
@@ -268,7 +269,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className="font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
             >
-              Docentes
+              {navigationLabels.docentes}
             </Link>
 
             {/* 5. OFERTA EDUCATIVA */}
@@ -277,7 +278,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 onClick={() => toggleMobileMenu('oferta')}
                 className="w-full flex items-center justify-between font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
               >
-                <span>Oferta Educativa</span>
+                <span>{navigationLabels.oferta}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileMenus.oferta ? 'rotate-180' : ''}`} />
               </button>
               {mobileMenus.oferta && (
@@ -306,12 +307,12 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 onClick={() => toggleMobileMenu('transparencia')}
                 className="w-full flex items-center justify-between font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
               >
-                <span>Transparencia</span>
+                <span>{navigationLabels.transparencia}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform ${mobileMenus.transparencia ? 'rotate-180' : ''}`} />
               </button>
               {mobileMenus.transparencia && (
                 <div className="pl-4 py-2 flex flex-col gap-2 bg-gray-50 dark:bg-gray-900/40 rounded-xl mt-1">
-                  {['2022', '2023', '2024', '2025', '2026'].map((y) => (
+                  {transparencyYears.map((y) => (
                     <Link key={y} to={`/transparencia/${y}`} onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
                       Ejercicio Fiscal {y}
                     </Link>
@@ -326,7 +327,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className="font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
             >
-              Servicios y Vinculación
+              {navigationLabels.servicios}
             </Link>
 
             {/* 8. CONTÁCTANOS */}
@@ -335,7 +336,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               onClick={() => setIsMenuOpen(false)}
               className="font-['Inter'] text-sm py-2 text-gray-700 dark:text-gray-300 hover:text-[#0F5132] dark:hover:text-[#D4A574] border-b border-gray-50 dark:border-gray-800 font-semibold"
             >
-              Contáctanos
+              {navigationLabels.contacto}
             </Link>
 
 
