@@ -1,4 +1,4 @@
 facebook : https://www.facebook.com/UTOMMaravatio
-instagram : https://www.instagram.com/utom_michoacan/   
-youtube: https://www.youtube.com/@UTOMMaravatioMichoacan
-whatsapp: 524471508913
+instagram : https://www.instagram.com/utom.maravatio/
+youtube: https://www.youtube.com/channel/UC-THOVJvjCp6e14RGyABi_A
+tiktok: https://www.tiktok.com/@utom_maravatio

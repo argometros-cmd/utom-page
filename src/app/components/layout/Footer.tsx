@@ -1,6 +1,6 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, MessageCircle, Video } from 'lucide-react';
 import logoUtom from '../../../imports/logo-utom.png';
-import { contactInfo } from '../../data/contact';
+import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../data/contact';
 
 export function Footer() {
   return (
@@ -36,7 +36,7 @@ export function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.instagram.com/utom_michoacan/"
+                href={contactInfo.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"
@@ -45,7 +45,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.youtube.com/@UTOMMaravatioMichoacan"
+                href={contactInfo.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"
@@ -54,7 +54,16 @@ export function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href={contactInfo.whatsappUrl}
+                href={contactInfo.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"
+                title="TikTok"
+              >
+                <Video className="w-5 h-5" />
+              </a>
+              <a
+                href={buildWhatsAppUrl(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"

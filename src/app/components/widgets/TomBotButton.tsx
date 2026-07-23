@@ -1,4 +1,5 @@
 import tomBotImg from '../../../imports/TomBot/TOM_bot.png';
+import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
 
 interface TomBotButtonProps {
   variant?: 'floating' | 'inline';
@@ -11,7 +12,8 @@ export function TomBotButton({
   className = '',
   onClick,
 }: TomBotButtonProps) {
-  const handleClick = onClick ?? (() => console.log('TomBot clicked'));
+  const handleClick =
+    onClick ?? (() => window.open(buildWhatsAppUrl(whatsappMessages.tombot), '_blank', 'noopener,noreferrer'));
 
   if (variant === 'inline') {
     return (

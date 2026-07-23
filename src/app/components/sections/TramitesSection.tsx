@@ -1,4 +1,5 @@
 import { FileText, Download, CheckCircle, FileCheck } from 'lucide-react';
+import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
 
 const tramites = [
   {
@@ -134,9 +135,14 @@ export function TramitesSection() {
               Nuestro equipo de Servicios Escolares está disponible para asistirte.
             </p>
           </div>
-          <button className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-all shadow-sm hover:shadow-md whitespace-nowrap">
+          <a
+            href={buildWhatsAppUrl(whatsappMessages.tramites)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-all shadow-sm hover:shadow-md whitespace-nowrap inline-flex items-center justify-center"
+          >
             Contactar Soporte
-          </button>
+          </a>
         </div>
       </div>
     </section>

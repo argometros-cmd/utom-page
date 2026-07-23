@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Facebook, MessageCircle } from 'lucide-react';
-import { contactInfo } from '../../data/contact';
+import { MapPin, Phone, Mail, Send, Facebook, MessageCircle, Instagram, Youtube, Video } from 'lucide-react';
+import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../data/contact';
 
 export function ContactoSection() {
   const [formData, setFormData] = useState({
@@ -174,7 +174,7 @@ export function ContactoSection() {
                 </button>
 
                 <a
-                href={contactInfo.whatsappUrl}
+                  href={buildWhatsAppUrl(whatsappMessages.general)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 rounded-xl font-['Montserrat'] font-bold text-[#0F5132] dark:text-[#D4A574] bg-[#D4A574]/15 hover:bg-[#D4A574]/25 border border-[#D4A574]/30 transition-all flex items-center justify-center gap-2 active:scale-98 text-center text-sm"
@@ -244,7 +244,7 @@ export function ContactoSection() {
             <h3 className="font-['Montserrat'] font-bold text-[#0F5132] dark:text-[#D4A574] text-xl">
               Síguenos en nuestras redes sociales
             </h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               <a
                 href={contactInfo.facebookUrl}
                 target="_blank"
@@ -259,7 +259,46 @@ export function ContactoSection() {
                 </span>
               </a>
               <a
-                href={contactInfo.whatsappUrl}
+                href={contactInfo.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#0F5132]/15 dark:bg-[#D4A574]/20 flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] group-hover:bg-[#D4A574] group-hover:text-white transition-all">
+                  <Instagram className="w-4 h-4" />
+                </div>
+                <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
+                  Instagram
+                </span>
+              </a>
+              <a
+                href={contactInfo.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#0F5132]/15 dark:bg-[#D4A574]/20 flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] group-hover:bg-[#D4A574] group-hover:text-white transition-all">
+                  <Youtube className="w-4 h-4" />
+                </div>
+                <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
+                  YouTube
+                </span>
+              </a>
+              <a
+                href={contactInfo.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#0F5132]/15 dark:bg-[#D4A574]/20 flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] group-hover:bg-[#D4A574] group-hover:text-white transition-all">
+                  <Video className="w-4 h-4" />
+                </div>
+                <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
+                  TikTok
+                </span>
+              </a>
+              <a
+                href={buildWhatsAppUrl(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"

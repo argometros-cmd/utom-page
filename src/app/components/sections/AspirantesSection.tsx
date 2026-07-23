@@ -1,4 +1,5 @@
 import { FileCheck, Calendar, UserCheck, BookOpen } from 'lucide-react';
+import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
 
 const requisitos = [
   {
@@ -102,9 +103,14 @@ export function AspirantesSection() {
                 Nuestro equipo está listo para ayudarte en cada paso del camino.
               </p>
             </div>
-            <button className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-colors shadow-md whitespace-nowrap">
+            <a
+              href={buildWhatsAppUrl(whatsappMessages.admisiones)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-colors shadow-md whitespace-nowrap inline-flex items-center justify-center"
+            >
               Contactar Admisiones
-            </button>
+            </a>
           </div>
         </div>
       </div>
