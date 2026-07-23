@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
 import logoUtom from '../../../imports/logo-utom.png';
+import { contactInfo } from '../../data/contact';
 
 export function Footer() {
   return (
@@ -26,7 +27,7 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com/UTOMMaravatio"
+                href={contactInfo.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"
@@ -53,7 +54,7 @@ export function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/524474780049"
+                href={contactInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 dark:bg-white/5 rounded-xl flex items-center justify-center hover:bg-[#D4A574] transition-colors"
@@ -135,20 +136,19 @@ export function Footer() {
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-[#D4A574] flex-shrink-0 mt-0.5" />
                 <span className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400">
-                  Maravatío, Michoacán<br />
-                  México
+                  {contactInfo.location}
                 </span>
               </li>
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-[#D4A574] flex-shrink-0" />
                 <span className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400">
-                  (436) 123 4567
+                  {contactInfo.phone}
                 </span>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-5 h-5 text-[#D4A574] flex-shrink-0" />
                 <span className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400">
-                  contacto@utom.edu.mx
+                  {contactInfo.email}
                 </span>
               </li>
             </ul>
@@ -167,4 +167,3 @@ export function Footer() {
     </footer>
   );
 }
-

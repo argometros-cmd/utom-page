@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Send, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, Facebook, MessageCircle } from 'lucide-react';
+import { contactInfo } from '../../data/contact';
 
 export function ContactoSection() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ export function ContactoSection() {
   };
 
   const mapQuery = encodeURIComponent(
-    'Universidad Tecnológica del Oriente de Michoacán, Comunidad de Santa Rita, Maravatío de Ocampo, Michoacán'
+    `Universidad Tecnológica del Oriente de Michoacán, ${contactInfo.location}`
   );
   const mapUrl = `https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
@@ -173,7 +174,7 @@ export function ContactoSection() {
                 </button>
 
                 <a
-                  href="https://wa.me/524474780049"
+                href={contactInfo.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 rounded-xl font-['Montserrat'] font-bold text-[#0F5132] dark:text-[#D4A574] bg-[#D4A574]/15 hover:bg-[#D4A574]/25 border border-[#D4A574]/30 transition-all flex items-center justify-center gap-2 active:scale-98 text-center text-sm"
@@ -203,7 +204,7 @@ export function ContactoSection() {
                     Ubicación
                   </h4>
                   <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Comunidad de Santa Rita S/N, Maravatío, Mich.
+                  {contactInfo.location}
                   </p>
                 </div>
               </div>
@@ -217,7 +218,7 @@ export function ContactoSection() {
                     Teléfono
                   </h4>
                   <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400">
-                    +52 (447) 150 8913
+                    {contactInfo.phone}
                   </p>
                 </div>
               </div>
@@ -231,7 +232,7 @@ export function ContactoSection() {
                     Correo
                   </h4>
                   <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400">
-                    servicios_escolares@utom.edu.mx
+                    {contactInfo.email}
                   </p>
                 </div>
               </div>
@@ -245,7 +246,7 @@ export function ContactoSection() {
             </h3>
             <div className="grid grid-cols-2 gap-3">
               <a
-                href="https://www.facebook.com/UTOMMaravatio"
+                href={contactInfo.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
@@ -258,33 +259,7 @@ export function ContactoSection() {
                 </span>
               </a>
               <a
-                href="https://www.instagram.com/utom_michoacan/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#0F5132]/15 dark:bg-[#D4A574]/20 flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] group-hover:bg-[#D4A574] group-hover:text-white transition-all">
-                  <Instagram className="w-4 h-4" />
-                </div>
-                <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
-                  Instagram
-                </span>
-              </a>
-              <a
-                href="https://www.youtube.com/@UTOMMaravatioMichoacan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"
-              >
-                <div className="w-8 h-8 rounded-lg bg-[#0F5132]/15 dark:bg-[#D4A574]/20 flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] group-hover:bg-[#D4A574] group-hover:text-white transition-all">
-                  <Youtube className="w-4 h-4" />
-                </div>
-                <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
-                  YouTube
-                </span>
-              </a>
-              <a
-                href="https://wa.me/524474780049"
+                href={contactInfo.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 bg-[#0F5132]/5 dark:bg-[#D4A574]/5 hover:bg-[#0F5132]/10 dark:hover:bg-[#D4A574]/10 rounded-xl transition-all duration-300 group"

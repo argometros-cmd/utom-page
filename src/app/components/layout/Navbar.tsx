@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
-import { ChevronDown, GraduationCap, Building2 } from 'lucide-react';
+import { Accessibility, ChevronDown, GraduationCap, Building2 } from 'lucide-react';
 import { navigationLabels, transparencyYears } from '../../data/navigation';
+import { TomBotButton } from '../widgets/TomBotButton';
+import { AccessibilityPanel } from '../widgets/AccessibilityMenu';
 
 interface NavbarProps {
   isMenuOpen: boolean;
@@ -10,6 +12,7 @@ interface NavbarProps {
 
 export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
   const [activeSection, setActiveSection] = useState('inicio');
+  const [isMobileAccessibilityOpen, setIsMobileAccessibilityOpen] = useState(false);
   const [mobileMenus, setMobileMenus] = useState({
     conocenos: false,
     estudiantes: false,
@@ -42,6 +45,12 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsMobileAccessibilityOpen(false);
+    }
+  }, [isMenuOpen]);
 
   const toggleMobileMenu = (menu: 'conocenos' | 'estudiantes' | 'oferta' | 'transparencia') => {
     setMobileMenus(prev => ({
@@ -339,7 +348,46 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               {navigationLabels.contacto}
             </Link>
 
+            {/* Herramientas */}
+            <div className="pt-3 mt-2 border-t border-gray-100 dark:border-gray-800 space-y-3">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-gray-500">
+                Herramientas
+              </p>
 
+              <TomBotButton
+                variant="inline"
+                onClick={() => console.log('TomBot clicked')}
+              />
+
+              <button
+                type="button"
+                onClick={() => setIsMobileAccessibilityOpen((prev) => !prev)}
+                className="w-full flex items-center justify-between rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/80 px-4 py-3 text-left transition-all hover:border-[#0F5132] dark:hover:border-[#D4A574] hover:bg-white dark:hover:bg-gray-900"
+                aria-expanded={isMobileAccessibilityOpen}
+                aria-controls="mobile-accessibility-panel"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white dark:bg-gray-900 shadow-sm text-[#0F5132] dark:text-[#D4A574]">
+                    <Accessibility className="w-5 h-5" />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold text-gray-900 dark:text-white">
+                      Accesibilidad
+                    </span>
+                    <span className="block text-xs text-gray-500 dark:text-gray-400">
+                      Ajustes de lectura y contraste
+                    </span>
+                  </span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isMobileAccessibilityOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {isMobileAccessibilityOpen && (
+                <div id="mobile-accessibility-panel" className="pt-1">
+                  <AccessibilityPanel embedded className="shadow-none" />
+                </div>
+              )}
+            </div>
           </div>
         </nav>
       )}
