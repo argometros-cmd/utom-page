@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 import { ChefHat, Code, Microscope, TrendingUp } from 'lucide-react';
 
@@ -7,28 +8,32 @@ const carreras = [
     nombre: 'Licenciatura en Gastronomía',
     nivel: 'Licenciatura',
     descripcion: 'Forma chefs profesionales con dominio de técnicas culinarias de alta cocina, gestión gastronómica y emprendimiento.',
-    imagen: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/666410927_975638551658920_1760193756701998190_n.jpg',
+    path: '/oferta/licenciatura-gastronomia',
   },
   {
     icon: Code,
     nombre: 'Ing. en Tecnologías de la Información e Innovación Digital',
     nivel: 'TSU / Ingeniería',
     descripcion: 'Profesionales en desarrollo de software, infraestructura tecnológica, ciberseguridad e innovación digital.',
-    imagen: 'https://images.unsplash.com/photo-1723987251277-18fc0a1effd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/572163649_849820160907427_6426852622862910825_n.jpg',
+    path: '/oferta/ingenieria-tecnologias-informacion',
   },
   {
     icon: Microscope,
     nombre: 'Ing. en Biotecnología',
     nivel: 'TSU / Ingeniería',
     descripcion: 'Especialistas en investigación científica, desarrollo de procesos biotecnológicos y gestión de laboratorios.',
-    imagen: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/674339444_983978064158302_7244058262800310456_n.jpg',
+    path: '/oferta/ingenieria-biotecnologia',
   },
   {
     icon: TrendingUp,
     nombre: 'Lic. en Negocios y Mercadotecnia',
     nivel: 'TSU / Licenciatura',
     descripcion: 'Expertos en estrategias comerciales, marketing digital, branding y desarrollo empresarial sostenible.',
-    imagen: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/600117694_887464807142962_4214036980281132860_n.jpg',
+    path: '/oferta/licenciatura-mercadotecnia',
   },
 ];
 
@@ -50,11 +55,11 @@ export function CarrerasSection() {
         {/* Bento Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {carreras.map((carrera, index) => {
-            const Icon = carrera.icon;
             return (
-              <div
+              <Link
                 key={index}
-                className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800"
+                to={carrera.path}
+                className="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A574] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-950"
               >
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
@@ -64,11 +69,6 @@ export function CarrerasSection() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-
-                  {/* Icon Badge */}
-                  <div className="absolute top-6 left-6 w-14 h-14 bg-[#D4A574] rounded-xl flex items-center justify-center shadow-lg">
-                    <Icon className="w-7 h-7 text-white" />
-                  </div>
 
                   {/* Nivel Badge */}
                   <div className="absolute bottom-6 left-6">
@@ -86,14 +86,14 @@ export function CarrerasSection() {
                   <p className="font-['Inter'] text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                     {carrera.descripcion}
                   </p>
-                  <button className="font-['Inter'] font-semibold text-sm text-[#D4A574] hover:text-[#c19563] transition-colors flex items-center gap-2 group">
+                  <span className="font-['Inter'] font-semibold text-sm text-[#D4A574] transition-colors flex items-center gap-2 group-hover:text-[#c19563]">
                     <span>Ver plan de estudios</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
+                  </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 import { Calendar, Trophy, Users, Bell } from 'lucide-react';
 
@@ -6,7 +7,7 @@ const noticias = [
     tipo: 'Reconocimiento',
     titulo: 'UTOM destaca por su excelencia académica',
     descripcion: 'Nuestra universidad ha sido reconocida por su compromiso con la innovación y la formación de talento.',
-    imagen: 'https://images.unsplash.com/photo-1723987135977-ae935608939e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/559062463_832632392626204_4728461178951455957_n.jpg',
     fecha: 'Abril 2026',
     icon: Trophy,
   },
@@ -14,7 +15,7 @@ const noticias = [
     tipo: 'Evento',
     titulo: 'Proceso de Admisión 2026',
     descripcion: 'Conoce las fechas y requisitos para formar parte de la comunidad UTOM.',
-    imagen: 'https://images.unsplash.com/photo-1769839272205-07cb052f5ca2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/645272099_947146884508087_8110588340482752856_n.jpg',
     fecha: 'Mayo 2026',
     icon: Calendar,
   },
@@ -22,7 +23,11 @@ const noticias = [
     tipo: 'Comunidad',
     titulo: 'Vinculación con la Industria',
     descripcion: 'Nuestros estudiantes realizan prácticas profesionales en empresas líderes de Michoacán.',
-    imagen: 'https://images.unsplash.com/photo-1758270705290-62b6294dd044?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/518118721_764597672763010_7951571893484423968_n.jpg',
+    imagenes: [
+      'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/518118721_764597672763010_7951571893484423968_n.jpg',
+      'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/518182652_764584256097685_1859711237771431679_n.jpg',
+    ],
     fecha: 'Marzo 2026',
     icon: Users,
   },
@@ -30,13 +35,23 @@ const noticias = [
     tipo: 'Convocatoria',
     titulo: 'Becas y Apoyos Económicos',
     descripcion: 'Consulta las opciones de financiamiento disponibles para estudiantes.',
-    imagen: 'https://images.unsplash.com/photo-1766297247924-6638d54e7c89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/629270895_927018403187602_8347093507890013032_n.jpg',
     fecha: 'Permanente',
     icon: Bell,
   },
 ];
 
 export function NoticiasSection() {
+  const [industryImageIndex, setIndustryImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setIndustryImageIndex((current) => (current + 1) % 2);
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +73,7 @@ export function NoticiasSection() {
               <ImageWithFallback
                 src={noticias[0].imagen}
                 alt={noticias[0].titulo}
-                className="w-full h-64 object-cover opacity-20 group-hover:opacity-25 transition-opacity"
+                className="w-full h-64 object-cover object-[center_20%] opacity-20 group-hover:opacity-25 transition-opacity"
               />
               {/* Triangle decoration */}
               <div
@@ -93,17 +108,36 @@ export function NoticiasSection() {
           {/* Tarjetas pequeñas */}
           {noticias.slice(1).map((noticia, index) => {
             const Icon = noticia.icon;
+            const isIndustryCard = noticia.titulo === 'Vinculación con la Industria';
+            const noticiaImages = 'imagenes' in noticia && Array.isArray(noticia.imagenes) && noticia.imagenes.length > 0
+              ? noticia.imagenes
+              : [noticia.imagen];
             return (
               <div
                 key={index}
                 className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800"
               >
                 <div className="relative h-40">
-                  <ImageWithFallback
-                    src={noticia.imagen}
-                    alt={noticia.titulo}
-                    className="w-full h-full object-cover"
-                  />
+                  {isIndustryCard && noticiaImages.length > 1 ? (
+                    <>
+                      {noticiaImages.map((imageSrc, imageIndex) => (
+                        <ImageWithFallback
+                          key={imageSrc}
+                          src={imageSrc}
+                          alt={noticia.titulo}
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                            imageIndex === industryImageIndex ? 'opacity-100' : 'opacity-0'
+                          }`}
+                        />
+                      ))}
+                    </>
+                  ) : (
+                    <ImageWithFallback
+                      src={noticia.imagen}
+                      alt={noticia.titulo}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-3 left-3">
                     <span className="inline-block px-3 py-1.5 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-lg text-xs font-['Inter'] font-semibold text-[#0F5132] dark:text-[#D4A574]">

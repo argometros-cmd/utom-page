@@ -12,6 +12,12 @@ export function TomBotButton({
   className = '',
   onClick,
 }: TomBotButtonProps) {
+  const isTomBotEnabled = import.meta.env.VITE_ENABLE_TOMBOT === 'true';
+
+  if (!isTomBotEnabled) {
+    return null;
+  }
+
   const handleClick =
     onClick ?? (() => window.open(buildWhatsAppUrl(whatsappMessages.tombot), '_blank', 'noopener,noreferrer'));
 

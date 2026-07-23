@@ -30,3 +30,45 @@ Este es el repositorio de la página de inicio (Landing Page) para la Universida
    ```bash
    npm run build
    ```
+
+## 🔌 Supabase
+
+El frontend ya queda listo para conectar con Supabase usando variables de entorno.
+
+1. Crea un archivo `.env.local` basado en `.env.example`.
+2. Define estas variables:
+
+   ```bash
+   VITE_SUPABASE_URL=https://gnzneytwugcebhaxtzem.supabase.co
+   VITE_SUPABASE_ANON_KEY=tu_anon_key
+   ```
+
+3. Usa estos helpers desde tu código:
+
+   ```ts
+   import { supabase } from './lib/supabase';
+   import { supabaseRestFetch } from './lib/supabaseRest';
+   ```
+
+Nota: en el frontend solo debe usarse la `anon key`. No expongas la `service_role key` en Vite.
+
+## 📁 Listar carpetas de Storage
+
+Si tu bucket público tiene carpetas dentro de carpetas, usa el helper recursivo:
+
+```ts
+import { listStorageFolder } from './lib/storage';
+
+const items = await listStorageFolder('nombre-del-bucket', 'carpeta-equis');
+```
+
+Eso devuelve un árbol con:
+
+- carpetas como `{ type: 'folder', children: [...] }`
+- archivos como `{ type: 'file', publicUrl: '...' }`
+
+Si quieres listar desde la raíz del bucket, pasa `''` como carpeta:
+
+```ts
+const rootItems = await listStorageFolder('nombre-del-bucket', '');
+```

@@ -18,8 +18,8 @@ import {
   FileText,
   LayoutDashboard
 } from 'lucide-react';
-import logoUtom from '../../imports/logo-utom.png';
 import { adminNavigationCategories } from '../data/navigation';
+import { utomBrandMarkUrl } from '../constants/branding';
 
 const sectionIcons = {
   inicio: House,
@@ -45,7 +45,7 @@ export default function AdminPanel() {
       {/* Sidebar */}
       <aside className="w-72 bg-[#0F5132] dark:bg-gray-900 text-white flex flex-col transition-colors duration-300">
         <div className="p-8">
-          <img src={logoUtom} alt="UTOM" className="h-10 w-auto brightness-0 invert" />
+          <img src={utomBrandMarkUrl} alt="UTOM" className="h-10 w-auto brightness-0 invert" />
           <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mt-4">Gestor de Contenido</p>
         </div>
 

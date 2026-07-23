@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Lock, User, Eye, EyeOff, ArrowLeft } from 'lucide-react';
-import logoUtom from '../../imports/logo-utom.png';
+import { utomBrandMarkUrl } from '../constants/branding';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +21,7 @@ export default function Login() {
         {/* Logo y Título */}
         <div className="text-center mb-8">
           <div className="inline-block p-4 bg-white dark:bg-gray-900 rounded-3xl shadow-xl mb-4 transition-colors duration-300">
-            <img src={logoUtom} alt="UTOM" className="h-16 w-auto object-contain" />
+            <img src={utomBrandMarkUrl} alt="UTOM" className="h-16 w-auto object-contain" />
           </div>
           <h1 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574]">
             Panel de Administración

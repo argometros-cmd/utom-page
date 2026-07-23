@@ -1,11 +1,11 @@
 import React from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { Code, Microscope, ChefHat, TrendingUp, ArrowRight, BookOpen, Compass, Briefcase, Award } from 'lucide-react';
+import { ArrowRight, BookOpen, Compass, Briefcase, Award } from 'lucide-react';
 
 interface CareerPageProps {
   title: string;
   level: string;
-  icon: React.ReactNode;
+  imageUrl: string;
   desc: string;
   ingreso: string[];
   egreso: string[];
@@ -14,7 +14,7 @@ interface CareerPageProps {
   breadcrumbs: { name: string; path: string }[];
 }
 
-function CareerTemplate({ title, level, icon, desc, ingreso, egreso, campo, materias, breadcrumbs }: CareerPageProps) {
+function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, materias, breadcrumbs }: CareerPageProps) {
   return (
     <SubpageLayout title={title} breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
@@ -31,9 +31,15 @@ function CareerTemplate({ title, level, icon, desc, ingreso, egreso, campo, mate
               {desc}
             </p>
           </div>
-          <div className="lg:col-span-4 flex justify-center">
-            <div className="w-32 h-32 lg:w-44 lg:h-44 bg-[#0F5132]/10 dark:bg-[#D4A574]/10 rounded-3xl flex items-center justify-center text-[#0F5132] dark:text-[#D4A574] shadow-inner">
-              {icon}
+          <div className="lg:col-span-4">
+            <div className="relative overflow-hidden rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-2xl bg-gray-100 dark:bg-gray-900">
+              <img
+                src={imageUrl}
+                alt={title}
+                className="h-80 w-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent" />
             </div>
           </div>
         </div>
@@ -127,7 +133,7 @@ export function OfertaTecnologias() {
     <CareerTemplate
       title="Ingeniería en Tecnologías de la Información e Innovación Digital"
       level="TSU / Ingeniería"
-      icon={<Code className="w-16 h-16 lg:w-24 lg:h-24" />}
+      imageUrl="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/572163649_849820160907427_6426852622862910825_n.jpg"
       desc="Forma líderes en el desarrollo de software, administración de bases de datos, ciberseguridad, infraestructura de servidores y redes, e innovación de procesos digitales. Capacitado para proponer soluciones disruptivas en la nube y optimizar la transformación tecnológica de organizaciones públicas y privadas."
       ingreso={[
         'Bachillerato concluido en áreas físico-matemáticas, tecnologías o afín.',
@@ -173,7 +179,7 @@ export function OfertaBiotecnologia() {
     <CareerTemplate
       title="Ingeniería en Biotecnología"
       level="TSU / Ingeniería"
-      icon={<Microscope className="w-16 h-16 lg:w-24 lg:h-24" />}
+      imageUrl="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/674339444_983978064158302_7244058262800310456_n.jpg"
       desc="Profesionales dedicados a la aplicación tecnológica de sistemas biológicos y organismos vivos para la creación o modificación de productos en sectores agrícola, ambiental, alimentario e industrial. Desarrolla competencias en cultivo de tejidos, biología molecular, fermentación y control de calidad biológico."
       ingreso={[
         'Interés por la biología, la química, la física y el trabajo de laboratorio.',
@@ -219,7 +225,7 @@ export function OfertaGastronomia() {
     <CareerTemplate
       title="Licenciatura en Gastronomía"
       level="TSU / Licenciatura"
-      icon={<ChefHat className="w-16 h-16 lg:w-24 lg:h-24" />}
+      imageUrl="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/666410927_975638551658920_1760193756701998190_n.jpg"
       desc="Crea expertos culinarios capaces de diseñar menús de alta cocina nacional e internacional, gestionar establecimientos de alimentos y bebidas bajo normas estrictas de higiene y calidad, y promover el patrimonio culinario con técnicas modernas de innovación gastronómica."
       ingreso={[
         'Interés por el arte culinario, los alimentos y las culturas del mundo.',
@@ -265,7 +271,7 @@ export function OfertaMercadotecnia() {
     <CareerTemplate
       title="Licenciatura en Negocios y Mercadotecnia"
       level="TSU / Licenciatura"
-      icon={<TrendingUp className="w-16 h-16 lg:w-24 lg:h-24" />}
+      imageUrl="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/600117694_887464807142962_4214036980281132860_n.jpg"
       desc="Prepara estrategas de negocios con dominio del marketing digital, investigación de mercados, branding, comercio electrónico y desarrollo de planes de negocio sustentables. Capaz de posicionar marcas de manera sólida en entornos omnicanal e impulsar ventas corporativas."
       ingreso={[
         'Interés en las ventas, el marketing digital y las dinámicas sociales.',
