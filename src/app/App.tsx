@@ -58,6 +58,16 @@ function ScrollToHashElement() {
   return null;
 }
 
+function ScrollToTopOnRouteChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+}
+
 function LandingPage() {
   return (
     <>
@@ -83,6 +93,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 scroll-smooth transition-colors duration-300">
       <BrowserRouter>
+        <ScrollToTopOnRouteChange />
         <ScrollToHashElement />
         <Routes>
           <Route path="/" element={<LandingPage />} />
