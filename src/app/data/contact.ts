@@ -1,4 +1,4 @@
-export const whatsappNumber = '524474780049';
+export const whatsappNumber = '524471508913';
 
 export const contactInfo = {
   location: 'Comunidad de Santa Rita S/N, Maravatío, Mich.',
