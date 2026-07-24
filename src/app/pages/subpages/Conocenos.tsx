@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
 import { Shield, Eye, Heart, CheckCircle2, Mail, PhoneCall, Search, MapPin, Building, Globe, GraduationCap } from 'lucide-react';
 import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
-import rectoraImg from '../../../imports/personal/rectora.jpeg';
 
 // ----------------------------------------------------
 // 1. Misión, Visión y Valores Page
@@ -104,7 +103,7 @@ export function ConocenosRectora() {
         <div className="lg:col-span-4 bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 text-center transition-colors duration-300">
           <div className="w-40 h-40 bg-gray-100 dark:bg-gray-800 rounded-full mx-auto flex items-center justify-center mb-6 overflow-hidden border-4 border-[#D4A574]/20">
             <ImageWithFallback
-              src={rectoraImg}
+              src="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/miembros/rectora.jpeg"
               alt="Mtra. Zenaida Salvador Brígido"
               className="w-full h-full object-cover"
             />
@@ -158,13 +157,13 @@ export function ConocenosDirectorio() {
   ];
 
   const contactos = [
-    { depto: 'Rectoría', titular: 'Mtra. Zenaida Salvador Brigido', cargo: 'Rectora', correo: 'zenaida_salvador@utom.edu.mx', ext: '101' },
-    { depto: 'Vinculación', titular: 'Carlos Marín Iniestra', cargo: 'Jefe de Departamento', correo: 'carlos_marin@utom.edu.mx', ext: '108' },
-    { depto: 'Gastronomía', titular: 'Mtro. Juan Carlos Pérez Moreno', cargo: 'Jefe de Departamento', correo: 'juancarlos_perez@utom.edu.mx', ext: '110' },
-    { depto: 'Tecnologías de la Información', titular: 'Ing. Karina Garduño Jiménez', cargo: 'Jefa de Departamento', correo: 'karina_garduno@utom.edu.mx', ext: '112' },
-    { depto: 'Biotecnología', titular: 'Ing. Alejandro Valencia Sánchez', cargo: 'Jefe de Departamento', correo: 'alejandro_valencia@utom.edu.mx', ext: '115' },
-    { depto: 'Servicios Escolares', titular: 'Ing. Socorro Morales Rosas', cargo: 'Jefa de Departamento', correo: 'socorro_morales@utom.edu.mx', ext: '105' },
-    { depto: 'Administración y Finanzas', titular: 'M.C. Ramiro Cruz Ordoñez', cargo: 'Jefe de Departamento', correo: 'ramiro_cruz@utom.edu.mx', ext: '103' }
+    { depto: 'Rectoría', titular: 'Mtra. Zenaida Salvador Brigido', cargo: 'Rectora', correo: 'zenaida_salvador@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Vinculación', titular: 'Carlos Marín Iniestra', cargo: 'Jefe de Departamento', correo: 'carlos_marin@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Gastronomía', titular: 'Mtro. Juan Carlos Pérez Moreno', cargo: 'Jefe de Departamento', correo: 'juancarlos_perez@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Tecnologías de la Información', titular: 'Ing. KaeLIrina Garduño Jiménez', cargo: 'Jefa de Departamento', correo: 'karina_garduno@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Biotecnología', titular: 'Ing. Alejandro Romero Estrada', cargo: 'Jefe de Departamento', correo: 'alejandro_romero@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Servicios Escolares', titular: 'Ing. Socorro Morales Rosas', cargo: 'Jefa de Departamento', correo: 'socorro_morales@utom.edu.mx', phone: '+52 447 150 8913' },
+    { depto: 'Administración y Finanzas', titular: 'M.C. Ramiro Cruz Ordoñez', cargo: 'Jefe de Departamento', correo: 'ramiro_cruz@utom.edu.mx', phone: '+52 447 150 8913' }
   ];
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -210,7 +209,7 @@ export function ConocenosDirectorio() {
                 </a>
                 <div className="flex items-center gap-2">
                   <PhoneCall className="w-4 h-4 text-[#D4A574]" />
-                  <span>Tel: (447) 478 0049 Ext. {contact.ext}</span>
+                  <span>{contact.phone}</span>
                 </div>
               </div>
             </div>

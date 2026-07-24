@@ -66,7 +66,7 @@ export function AccessibilityPanel({
         'bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 transition-colors duration-300',
         embedded
           ? 'w-full p-4 shadow-none'
-          : 'absolute bottom-20 left-0 w-72 p-5 mb-2 shadow-2xl origin-bottom-left',
+          : 'absolute bottom-20 right-0 w-72 p-5 mb-2 shadow-2xl origin-bottom-right',
         className,
       )}
     >
@@ -211,7 +211,7 @@ export function AccessibilityMenu() {
   }, [isOpen]);
 
   return (
-    <div className="fixed bottom-24 left-8 z-[100] hidden lg:block" ref={menuRef}>
+    <div className="fixed bottom-24 right-8 z-[100] hidden lg:block" ref={menuRef}>
       {isOpen && <AccessibilityPanel onClose={() => setIsOpen(false)} />}
 
       {/* Main Floating Button */}
