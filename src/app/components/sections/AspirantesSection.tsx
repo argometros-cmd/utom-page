@@ -1,4 +1,4 @@
-import { FileCheck, Calendar, UserCheck, BookOpen } from 'lucide-react';
+import { FileCheck, Calendar, UserCheck, BookOpen, Download, ArrowRight } from 'lucide-react';
 import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
 
 const requisitos = [
@@ -91,24 +91,49 @@ export function AspirantesSection() {
           })}
         </div>
 
-        {/* CTA Box */}
-        <div className="mt-16 bg-gradient-to-r from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-800 rounded-2xl p-10 shadow-lg border border-transparent dark:border-gray-800">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* CTA Cards */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
+          <div className="bg-gradient-to-r from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-800 rounded-2xl p-10 shadow-lg border border-transparent dark:border-gray-800">
             <div className="text-white">
               <h3 className="font-['Montserrat'] font-bold mb-2 text-2xl">
                 ¿Tienes dudas sobre el proceso de admisión?
               </h3>
-              <p className="font-['Inter'] text-white/90">
+              <p className="font-['Inter'] text-white/90 mb-6">
                 Nuestro equipo está listo para ayudarte en cada paso del camino.
               </p>
+              <a
+                href={buildWhatsAppUrl(whatsappMessages.admisiones)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-colors shadow-md whitespace-nowrap inline-flex items-center justify-center"
+              >
+                Contactar Admisiones
+              </a>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-10 shadow-lg border border-gray-200 dark:border-gray-800">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-[#D4A574] flex items-center justify-center shadow-sm shrink-0">
+                <Download className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h3 className="font-['Montserrat'] font-bold text-[#0F5132] dark:text-[#D4A574] text-2xl mb-2">
+                  Descarga la convocatoria
+                </h3>
+                <p className="font-['Inter'] text-gray-600 dark:text-gray-400">
+                  Revisa los detalles del proceso de nuevo ingreso en un solo documento.
+                </p>
+              </div>
             </div>
             <a
-              href={buildWhatsAppUrl(whatsappMessages.admisiones)}
+              href="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/docs/CONVOCATORIA-NUEVO-INGRESO.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#c19563] transition-colors shadow-md whitespace-nowrap inline-flex items-center justify-center"
+              className="inline-flex items-center gap-2 bg-[#0F5132] dark:bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-8 py-3 rounded-xl hover:bg-[#0d4228] dark:hover:bg-[#c19563] transition-colors shadow-md"
             >
-              Contactar Admisiones
+              <span>Descargar convocatoria</span>
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
         </div>

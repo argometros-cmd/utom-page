@@ -1,4 +1,5 @@
 import { ArrowRight, Download } from 'lucide-react';
+import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
 
 export function CallToAction() {
   return (
@@ -24,14 +25,24 @@ export function CallToAction() {
           </p>
 
           <div className="flex flex-wrap gap-6 justify-center items-center">
-            <button className="group bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-10 py-4 rounded-xl hover:bg-[#c19563] transition-all shadow-lg hover:shadow-xl flex items-center gap-3">
+            <a
+              href={buildWhatsAppUrl(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-[#D4A574] text-white font-['Montserrat'] font-semibold px-10 py-4 rounded-xl hover:bg-[#c19563] transition-all shadow-lg hover:shadow-xl flex items-center gap-3"
+            >
               <span>Solicita Información</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-['Montserrat'] font-semibold px-10 py-4 rounded-xl hover:bg-white/20 transition-all shadow-lg hover:shadow-xl flex items-center gap-3">
+            </a>
+            <a
+              href="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/docs/CONVOCATORIA-NUEVO-INGRESO.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-['Montserrat'] font-semibold px-10 py-4 rounded-xl hover:bg-white/20 transition-all shadow-lg hover:shadow-xl flex items-center gap-3"
+            >
               <Download className="w-5 h-5" />
               <span>Descarga Convocatoria</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

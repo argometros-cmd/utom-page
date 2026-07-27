@@ -125,7 +125,7 @@ export default function DocentesPage() {
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0F5132] dark:bg-[#D4A574] text-white dark:text-[#0F5132] font-['Montserrat'] font-semibold shadow-sm hover:bg-[#0d4228] dark:hover:bg-[#c19563] transition-colors"
             >
               <Mail className="w-4 h-4" />
-              <span>Enviar perfil</span>
+              <span>Conocer convocatoria</span>
             </a>
           </div>
         </div>

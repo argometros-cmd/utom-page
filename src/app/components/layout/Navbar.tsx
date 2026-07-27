@@ -21,7 +21,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
   });
 
   useEffect(() => {
-    const sections = ['inicio', 'aspirantes', 'oferta', 'tramites', 'contacto'];
+    const sections = ['inicio', 'aspirantes', 'oferta', 'contacto'];
     
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {

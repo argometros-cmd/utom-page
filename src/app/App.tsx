@@ -4,7 +4,6 @@ import { Header } from './components/layout/Header';
 import { HeroSection } from './components/sections/HeroSection';
 import { CarrerasSection } from './components/sections/CarrerasSection';
 import { AspirantesSection } from './components/sections/AspirantesSection';
-import { TramitesSection } from './components/sections/TramitesSection';
 import { NoticiasSection } from './components/sections/NoticiasSection';
 import { CallToAction } from './components/sections/CallToAction';
 import { ContactoSection } from './components/sections/ContactoSection';
@@ -74,7 +73,6 @@ function LandingPage() {
         <HeroSection />
         <CarrerasSection />
         <AspirantesSection />
-        <TramitesSection />
         <NoticiasSection />
         <CallToAction />
         <ContactoSection />

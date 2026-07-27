@@ -41,7 +41,7 @@ export function EstudiantesModelo() {
   ];
 
   return (
-    <SubpageLayout title="Modelo Educativo UT" breadcrumbs={breadcrumbs}>
+    <SubpageLayout title="Modelo Educativo" breadcrumbs={breadcrumbs}>
       <div className="space-y-12">
         {/* Banner Explicativo */}
         <div className="bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 text-white rounded-3xl p-8 lg:p-12 shadow-md relative overflow-hidden">
@@ -69,12 +69,12 @@ export function EstudiantesModelo() {
             </div>
             <h3 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-3">Ingenierías y Licenciaturas</h3>
             <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Tras graduarte como TSU, continúas tus estudios por un año y ocho meses adicionales (cinco cuatrimestres) para obtener el título de Ingeniería o Licenciatura.
+              Tras graduarte como TSU, continúas tus estudios por un año y cuatro meses adicionales (cuatro cuatrimestres) para obtener el título de Ingeniería o Licenciatura.
             </p>
           </div>
 
           <div className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-150 dark:border-gray-800 shadow-sm transition-colors duration-300">
-            <div className="w-12 h-12 bg-[#D4A574]/10 rounded-xl flex items-center justify-center text-[#D4A574] mb-6">
+            <div className="w-12 h-12 bg-[#D4A574]/10 rounded-xl flex items-center justify-center text-[#D4A574] mb-6"> 
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-3">Estadías Profesionales</h3>
