@@ -1,6 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, MessageCircle, Video } from 'lucide-react';
 import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../data/contact';
-import { utomBrandMarkUrl } from '../../constants/branding';
 
 export function Footer() {
   return (
@@ -17,7 +16,7 @@ export function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src={utomBrandMarkUrl}
+                src="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/logos/topbar/UTOM.png"
                 alt="Universidad Tecnológica del Oriente de Michoacán"
                 className="h-14 w-auto brightness-0 invert"
               />

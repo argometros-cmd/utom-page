@@ -34,43 +34,6 @@ export function CallToAction() {
             </button>
           </div>
         </div>
-
-        {/* Additional Info Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <div className="text-[#D4A574] font-['Montserrat'] font-bold mb-3 text-3xl">
-              Paso 1
-            </div>
-            <h3 className="font-['Montserrat'] font-semibold text-white mb-2 text-lg">
-              Elige tu carrera
-            </h3>
-            <p className="font-['Inter'] text-sm text-white/80 leading-relaxed">
-              Explora nuestros programas educativos y encuentra el que mejor se adapte a tus intereses.
-            </p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <div className="text-[#D4A574] font-['Montserrat'] font-bold mb-3 text-3xl">
-              Paso 2
-            </div>
-            <h3 className="font-['Montserrat'] font-semibold text-white mb-2 text-lg">
-              Completa tu registro
-            </h3>
-            <p className="font-['Inter'] text-sm text-white/80 leading-relaxed">
-              Envía tu solicitud y documentos a través de nuestra plataforma SIGO.
-            </p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-            <div className="text-[#D4A574] font-['Montserrat'] font-bold mb-3 text-3xl">
-              Paso 3
-            </div>
-            <h3 className="font-['Montserrat'] font-semibold text-white mb-2 text-lg">
-              Inicia tu formación
-            </h3>
-            <p className="font-['Inter'] text-sm text-white/80 leading-relaxed">
-              Realiza tu examen de admisión y comienza tu camino hacia el éxito profesional.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

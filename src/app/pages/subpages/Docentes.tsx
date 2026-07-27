@@ -1,94 +1,135 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { BookOpen, FolderOpen, Mail, GraduationCap, Award, BrainCircuit } from 'lucide-react';
+import { Mail, ChevronLeft, ChevronRight } from 'lucide-react';
+import { contactInfo } from '../../data/contact';
 
 export default function DocentesPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const breadcrumbs = [
     { name: 'Docentes', path: '/docentes' }
   ];
 
-  const recursos = [
-    { icon: FolderOpen, title: 'Portal Docente', desc: 'Acceso directo a captura de calificaciones, asistencias y planeación académica cuatrimestral.', action: 'Ingresar al Portal' },
-    { icon: Mail, title: 'Correo Institucional', desc: 'Plataforma oficial de comunicación de la universidad para el claustro docente y administrativo.', action: 'Ir a Correo' },
-    { icon: BookOpen, title: 'Biblioteca Virtual', desc: 'Bases de datos científicas, revistas digitales y libros de texto especializados para apoyo pedagógico.', action: 'Consultar Biblioteca' },
+  const carouselImages = [
+    'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/656420397_967155492507226_1412740936610324300_n.jpg',
+    'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/650239836_953964350493007_8186742531811547547_n.jpg',
+    'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/655852567_965465772676198_3494362866240556044_n.jpg',
   ];
 
-  const investigaciones = [
-    { area: 'Tecnologías y Sustentabilidad', depto: 'Ing. en Tecnologías de la Información', lider: 'Dr. Alejandro Guzmán Ramos', enfoque: 'Sistemas distribuidos aplicados al agro de Michoacán.' },
-    { area: 'Biotecnología Aplicada', depto: 'Ing. en Biotecnología', lider: 'Dra. María Elena Sánchez', enfoque: 'Desarrollo de biofertilizantes orgánicos para cultivos regionales.' }
-  ];
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentSlide((current) => (current + 1) % carouselImages.length);
+    }, 4500);
+
+    return () => window.clearInterval(timer);
+  }, [carouselImages.length]);
 
   return (
     <SubpageLayout title="Docentes" breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
-        {/* Intro */}
-        <div className="bg-[#0F5132]/5 dark:bg-[#D4A574]/5 border border-[#0F5132]/10 dark:border-[#D4A574]/10 rounded-3xl p-8 transition-colors duration-300">
-          <h2 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574] mb-4">Portal e Información para Docentes</h2>
-          <p className="font-['Inter'] text-gray-600 dark:text-gray-300 leading-relaxed">
-            La Universidad Tecnológica del Oriente de Michoacán reconoce la labor académica de su personal docente. En esta sección se agrupan los recursos digitales clave para el desarrollo de sus asignaturas, así como la información sobre capacitación docente, investigación y cuerpos académicos activos en la institución.
-          </p>
-        </div>
-
-        {/* Recursos Grid */}
-        <div className="space-y-6">
-          <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574] text-center">Recursos Académicos</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {recursos.map((r, i) => {
-              const Icon = r.icon;
-              return (
-                <div key={i} className="bg-white dark:bg-gray-900 border border-gray-150 dark:border-gray-800 rounded-3xl p-8 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
-                  <div>
-                    <div className="w-12 h-12 bg-[#D4A574]/10 rounded-xl flex items-center justify-center text-[#D4A574] mb-6">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h4 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-3">{r.title}</h4>
-                    <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">{r.desc}</p>
-                  </div>
-                  <button className="w-full bg-[#0F5132] dark:bg-[#D4A574] text-white dark:text-[#0F5132] font-semibold py-3 rounded-xl hover:bg-[#0d4228] dark:hover:bg-[#c19563] transition-colors text-sm shadow-sm">
-                    {r.action}
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Cuerpos Académicos */}
-        <div className="space-y-6">
-          <div className="text-center">
-            <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574]">Cuerpos Académicos e Investigación</h3>
-            <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 mt-2 max-w-xl mx-auto">
-              Grupos colegiados de investigación dedicados al desarrollo tecnológico y la vinculación con problemáticas del sector productivo.
-            </p>
+        {/* Intro + Carrusel */}
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <div className="bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 text-white rounded-3xl p-8 lg:p-10 shadow-md relative overflow-hidden transition-colors duration-300 min-h-[420px] flex items-center">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#D4A574] opacity-10" style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}></div>
+            <div className="relative z-10 max-w-4xl">
+              <p className="font-['Montserrat'] font-semibold text-sm uppercase tracking-[0.2em] text-[#D4A574] mb-4">
+                Personal Docente
+              </p>
+              <p className="font-['Inter'] text-white/90 leading-relaxed text-base lg:text-lg">
+                El personal académico de la Universidad Tecnológica del Oriente de Michoacán se compone por personal universitario docente e investigador, que comparten su conocimiento y experiencia a nuestros estudiantes. Para poder brindar a nuestros estudiantes una preparación profesional para el mercado actual, el cual es cada vez más exigente y competitivo. Para ellos, la Universidad Tecnológica del Oriente de Michoacán pone a su disposición recursos y herramientas que ayudan a los docentes a complementar la vocación académica que imparten.
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {investigaciones.map((inv, idx) => (
-              <div key={idx} className="bg-gray-50 dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 transition-colors duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <BrainCircuit className="w-6 h-6 text-[#D4A574]" />
-                  <h4 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574]">{inv.area}</h4>
-                </div>
-                <p className="font-['Inter'] text-xs font-semibold text-[#D4A574] mb-1">{inv.depto}</p>
-                <p className="font-['Inter'] text-sm text-gray-800 dark:text-gray-200 font-medium mb-3">Líder: {inv.lider}</p>
-                <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{inv.enfocus}</p>
+          <div className="relative rounded-3xl overflow-hidden shadow-md border border-gray-150 dark:border-gray-800 min-h-[420px] bg-white dark:bg-gray-900">
+            {carouselImages.map((imageSrc, index) => (
+              <div
+                key={imageSrc}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img
+                  src={imageSrc}
+                  alt={`Docentes UTOM ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+            <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 flex items-end justify-between gap-4 z-10">
+              <div>
+                <p className="font-['Montserrat'] font-semibold text-[#D4A574] text-sm uppercase tracking-[0.2em] mb-2">
+                  Galería Docente
+                </p>
+                <h3 className="font-['Montserrat'] font-bold text-white text-xl lg:text-2xl">
+                  Comunidad académica en acción
+                </h3>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length)}
+                  className="w-10 h-10 rounded-full bg-white/85 hover:bg-white text-[#0F5132] flex items-center justify-center shadow transition-colors"
+                  aria-label="Imagen anterior"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % carouselImages.length)}
+                  className="w-10 h-10 rounded-full bg-white/85 hover:bg-white text-[#0F5132] flex items-center justify-center shadow transition-colors"
+                  aria-label="Imagen siguiente"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {carouselImages.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentSlide ? 'w-6 bg-[#D4A574]' : 'w-2 bg-white/60 hover:bg-white'
+                  }`}
+                  aria-label={`Ir a la imagen ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Capacitación */}
-        <div className="bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 text-white rounded-3xl p-8 lg:p-12 shadow-md relative overflow-hidden transition-colors duration-300 flex flex-col lg:flex-row items-center gap-8">
-          <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center flex-shrink-0 text-[#D4A574]">
-            <Award className="w-10 h-10" />
-          </div>
-          <div>
-            <h3 className="font-['Montserrat'] font-bold text-2xl mb-4 text-[#D4A574]">Capacitación y Formación Continua</h3>
-            <p className="font-['Inter'] text-lg text-white/90 leading-relaxed max-w-3xl">
-              Anualmente implementamos talleres de planeación didáctica, desarrollo humano, ciberseguridad educativa e idiomas, impulsando la acreditación docente y la mejora continua del proceso enseñanza-aprendizaje.
-            </p>
+        {/* Convocatoria Externa */}
+        <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-3xl shadow-sm overflow-hidden">
+          <div className="grid lg:grid-cols-[1fr_auto] items-center gap-6 p-6 lg:p-8">
+            <div className="space-y-3">
+              <p className="font-['Montserrat'] font-semibold text-sm uppercase tracking-[0.2em] text-[#D4A574]">
+                Convocatoria Externa
+              </p>
+              <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574]">
+                ¿Eres profesionista y quieres formar parte de la UTOM?
+              </h3>
+              <p className="font-['Inter'] text-sm lg:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
+                Si tienes experiencia docente, técnica o profesional en tu área, puedes sumarte al crecimiento académico de nuestra comunidad. Escríbenos para compartir tu perfil y explorar oportunidades de colaboración con la Universidad Tecnológica del Oriente de Michoacán.
+              </p>
+            </div>
+
+            <a
+              href={`mailto:${contactInfo.email}?subject=${encodeURIComponent('Quiero ser parte del cuerpo docente UTOM')}`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0F5132] dark:bg-[#D4A574] text-white dark:text-[#0F5132] font-['Montserrat'] font-semibold shadow-sm hover:bg-[#0d4228] dark:hover:bg-[#c19563] transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Enviar perfil</span>
+            </a>
           </div>
         </div>
+
       </div>
     </SubpageLayout>
   );
