@@ -32,6 +32,7 @@ const noticias = [
     ],
     fecha: 'Marzo 2026',
     icon: Users,
+    href: '/servicios-vinculacion',
   },
   {
     tipo: 'Convocatoria',

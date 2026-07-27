@@ -35,7 +35,7 @@ import {
   OfertaMercadotecnia
 } from './pages/subpages/Oferta';
 import TransparenciaPage from './pages/subpages/Transparencia';
-import ServiciosVinculacionPage from './pages/subpages/ServiciosVinculacion';
+import ServiciosVinculacionPage, { ServiciosTitulacionPage } from './pages/subpages/ServiciosVinculacion';
 import ContactoPage from './pages/subpages/Contacto';
 
 function ScrollToHashElement() {
@@ -123,6 +123,7 @@ export default function App() {
           
           {/* Servicios y Vinculación */}
           <Route path="/servicios-vinculacion" element={<ServiciosVinculacionPage />} />
+          <Route path="/servicios-vinculacion/titulacion" element={<ServiciosTitulacionPage />} />
           
           {/* Contacto */}
           <Route path="/contacto" element={<ContactoPage />} />

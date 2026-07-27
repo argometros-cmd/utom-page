@@ -193,3 +193,23 @@
 .grayscale {
   filter: grayscale(1) !important;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-60 {
+  animation: marquee 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-60 {
+    animation: none;
+  }
+}
