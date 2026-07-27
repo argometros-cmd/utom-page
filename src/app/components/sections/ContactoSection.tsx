@@ -245,6 +245,7 @@ export function ContactoSection() {
               Síguenos en nuestras redes sociales
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+             { /* Facebook */}
               <a
                 href={contactInfo.facebookUrl}
                 target="_blank"
@@ -258,6 +259,7 @@ export function ContactoSection() {
                   Facebook
                 </span>
               </a>
+              {/* Instagram 
               <a
                 href={contactInfo.instagramUrl}
                 target="_blank"
@@ -271,6 +273,7 @@ export function ContactoSection() {
                   Instagram
                 </span>
               </a>
+              {/* Youtube 
               <a
                 href={contactInfo.youtubeUrl}
                 target="_blank"
@@ -284,6 +287,7 @@ export function ContactoSection() {
                   YouTube
                 </span>
               </a>
+              {/* Tiktok
               <a
                 href={contactInfo.tiktokUrl}
                 target="_blank"
@@ -296,7 +300,8 @@ export function ContactoSection() {
                 <span className="font-['Inter'] text-xs font-semibold text-gray-700 dark:text-gray-300 group-hover:text-[#0F5132] dark:group-hover:text-[#D4A574] transition-colors">
                   TikTok
                 </span>
-              </a>
+              </a> */}
+              {/* Whatsapp */}
               <a
                 href={buildWhatsAppUrl(whatsappMessages.general)}
                 target="_blank"

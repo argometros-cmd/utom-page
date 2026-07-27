@@ -6,11 +6,10 @@ const requisitos = [
     icon: FileCheck,
     titulo: 'Documentación',
     items: [
-      'Certificado de bachillerato',
+      'Constancia / Certificado de bachillerato',
       'Acta de nacimiento',
-      'CURP',
-      'Comprobante de domicilio',
-      '6 fotografías tamaño infantil',
+      'Comprobante de ficha pagada',
+      '1 Fotografía tamaño infantil',
     ],
   },
   {
@@ -28,9 +27,9 @@ const requisitos = [
     icon: Calendar,
     titulo: 'Fechas Importantes',
     items: [
-      'Registro: Mayo - Junio 2026',
-      'Examen de admisión: Julio 2026',
-      'Publicación de resultados: Julio 2026',
+      'Registro: 12 de Enero - 20 de Agosto',
+      'Examen de admisión: 21 de Agosto',
+      'Publicación de resultados: 25 de Agosto',
       'Inscripción: Agosto 2026',
       'Inicio de clases: Septiembre 2026',
     ],

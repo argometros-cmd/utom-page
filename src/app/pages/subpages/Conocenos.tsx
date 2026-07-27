@@ -263,8 +263,8 @@ export function ConocenosCampusMaravatio() {
               <div className="flex gap-3 items-start p-3 bg-gray-50 dark:bg-gray-900 rounded-xl">
                 <GraduationCap className="w-5 h-5 text-[#D4A574]" />
                 <div>
-                  <h4 className="font-bold text-xs">Biblioteca Física y Virtual</h4>
-                  <p className="text-[10px] text-gray-500">Más de 5,000 títulos especializados</p>
+                  <h4 className="font-bold text-xs">Docentes especializados</h4>
+                  <p className="text-[10px] text-gray-500">Personal educativo altamente preparado</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start p-3 bg-gray-50 dark:bg-gray-900 rounded-xl">
@@ -309,7 +309,7 @@ export function ConocenosCampusZitacuaro() {
           <div className="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-md border border-gray-150 dark:border-gray-800 h-[380px] order-last lg:order-first">
             <iframe
               title="Ubicación Campus Zitácuaro"
-              src="https://maps.google.com/maps?q=Zit%C3%A1cuaro,%20Michoac%C3%A1n&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.718017406017!2d-100.37567328942156!3d19.424581140861612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2a4f2bae0acd1%3A0x50cc055fb5acdab3!2sMorelos%20441%2C%20Coatepec%20de%20Morelos%2C%2061512%20Zit%C3%A1cuaro%2C%20Mich.!5e0!3m2!1ses-419!2smx!4v1785118286033!5m2!1ses-419!2smx"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -327,7 +327,7 @@ export function ConocenosCampusZitacuaro() {
             <ul className="space-y-3 font-['Inter'] text-sm text-gray-700 dark:text-gray-300">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#D4A574]" />
-                <span>Mismo modelo educativo práctico 70% / 30% teórico.</span>
+                <span>Mismo modelo educativo práctico 60% / 40% teórico.</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#D4A574]" />

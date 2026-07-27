@@ -193,7 +193,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
 
             <a
               href="http://prometheus.utmorelia.edu.mx:8080/sigo/"
-              className="inline-flex items-center justify-center h-7 px-18 rounded-md bg-[#D4A574] text-white font-['Inter'] text-xs font-bold hover:bg-[#c89452] transition-colors shadow-sm ml-6 shrink-0"
+              className="inline-flex items-center justify-center h-8 px-16 rounded-sm bg-[#D4A574] text-white font-['Inter'] text-xs font-bold hover:bg-[#c89452] transition-colors shadow-sm ml-6 shrink-0"
             >
               SIGO
             </a>
@@ -266,14 +266,6 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 </div>
               )}
             </div>
-
-            <a
-              href="http://prometheus.utmorelia.edu.mx:8080/sigo/"
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center h-11 px-4 rounded-md bg-[#D4A574] text-[#FFFFFF] font-['Inter'] text-sm font-bold hover:bg-[#c89452] transition-colors shadow-sm"
-            >
-              SIGO
-            </a>
 
             {/* 4. DOCENTES */}
             <Link
@@ -350,6 +342,13 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
             >
               {navigationLabels.contacto}
             </Link>
+                        <a
+              href="http://prometheus.utmorelia.edu.mx:8080/sigo/"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center justify-center h-11 px-4 rounded-md bg-[#D4A574] text-[#FFFFFF] font-['Inter'] text-sm font-bold hover:bg-[#c89452] transition-colors shadow-sm"
+            >
+              SIGO
+            </a>
 
             {/* Herramientas */}
             <div className="pt-3 mt-2 border-t border-gray-100 dark:border-gray-800 space-y-3">

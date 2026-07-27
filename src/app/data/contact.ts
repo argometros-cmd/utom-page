@@ -17,7 +17,7 @@ export const contactInfo = {
   whatsappNumber,
   whatsappUrl: `https://wa.me/${whatsappNumber}`,
   facebookUrl: 'https://www.facebook.com/UTOMMaravatio',
-  instagramUrl: 'https://www.instagram.com/utom.maravatio/',
-  youtubeUrl: 'https://www.youtube.com/channel/UC-THOVJvjCp6e14RGyABi_A',
-  tiktokUrl: 'https://www.tiktok.com/@utom_maravatio',
+  // instagramUrl: 'https://www.instagram.com/utom.maravatio/',
+  // youtubeUrl: 'https://www.youtube.com/channel/UC-THOVJvjCp6e14RGyABi_A',
+  // tiktokUrl: 'https://www.tiktok.com/@utom_maravatio',
 } as const;

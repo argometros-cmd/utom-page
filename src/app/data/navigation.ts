@@ -4,7 +4,7 @@ export const navigationLabels = {
   estudiantes: 'Estudiantes',
   docentes: 'Docentes',
   oferta: 'Oferta Educativa',
-  transparencia: 'Transparencia',
+  transparencia: 'Información Financiera',
   servicios: 'Servicios y Vinculación',
   contacto: 'Contáctanos',
 } as const;

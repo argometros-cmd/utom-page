@@ -45,9 +45,13 @@ function CountUp({ end, duration = 2000, suffix = "" }: { end: number, duration?
   return <span ref={elementRef}>{count}{suffix}</span>;
 }
 
-// Importa dinámicamente cualquier imagen...
-const welcomeImages = (import.meta as any).glob('../../../imports/hero/*.{png,jpg,jpeg,webp,gif}', { eager: true });
-const images = Object.values(welcomeImages).map((mod: any) => mod.default);
+const images = [
+  'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/IMG_3378-scaled.jpg',
+  'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/730321018_1503343831269552_5887156137369678410_n.jpg',
+  'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/IMG_3444-1-scaled.jpg',
+  'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/556956789_827218966500880_3281514451403308648_n.jpg',
+  'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/650060800_954648133757962_4667930100285522658_n.jpg',
+];
 
 const caracteristicas = [
   {
@@ -275,4 +279,3 @@ export function HeroSection() {
     </>
   );
 }
-

@@ -45,7 +45,7 @@ export function EstudiantesModelo() {
       <div className="space-y-12">
         {/* Banner Explicativo */}
         <div className="bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 text-white rounded-3xl p-8 lg:p-12 shadow-md relative overflow-hidden">
-          <h2 className="font-['Montserrat'] font-bold text-3xl mb-4 text-[#D4A574]">70% Práctico y 30% Teórico</h2>
+          <h2 className="font-['Montserrat'] font-bold text-3xl mb-4 text-[#D4A574]">60% Práctico y 40% Teórico</h2>
           <p className="font-['Inter'] text-lg text-white/90 leading-relaxed max-w-3xl">
             Nuestra estructura de enseñanza fomenta que el estudiante adquiera habilidades aplicadas en laboratorios, talleres y simulaciones reales, reduciendo las clases teóricas expositivas y potenciando el "saber hacer".
           </p>

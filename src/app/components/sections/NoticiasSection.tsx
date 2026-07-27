@@ -69,19 +69,19 @@ export function NoticiasSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Primera tarjeta grande */}
           <div className="lg:col-span-2 lg:row-span-2 bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group relative border border-transparent dark:border-gray-800">
-            <div className="relative h-full min-h-[400px]">
+            <div className="relative min-h-[400px] h-full">
               <ImageWithFallback
                 src={noticias[0].imagen}
                 alt={noticias[0].titulo}
-                className="w-full h-64 object-cover object-[center_20%] opacity-20 group-hover:opacity-25 transition-opacity"
+                className="absolute inset-0 w-full h-full object-cover object-[center_20%] opacity-20 group-hover:opacity-25 transition-opacity"
               />
               {/* Triangle decoration */}
               <div
-                className="absolute top-0 right-0 w-40 h-40 bg-[#D4A574] opacity-15"
+                className="absolute top-0 right-0 w-40 h-40 bg-[#D4A574] opacity-15 z-10"
                 style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
               ></div>
 
-              <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+              <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end z-20">
                 <div className="flex items-center gap-2 mb-4">
                   {(() => {
                     const Icon = noticias[0].icon;

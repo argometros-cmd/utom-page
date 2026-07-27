@@ -35,6 +35,7 @@ export function Footer() {
               >
                 <Facebook className="w-5 h-5" />
               </a>
+              {/* *
               <a
                 href={contactInfo.instagramUrl}
                 target="_blank"
@@ -61,7 +62,7 @@ export function Footer() {
                 title="TikTok"
               >
                 <Video className="w-5 h-5" />
-              </a>
+              </a> */}
               <a
                 href={buildWhatsAppUrl(whatsappMessages.general)}
                 target="_blank"
@@ -110,16 +111,6 @@ export function Footer() {
           <div>
             <h3 className="font-['Montserrat'] font-semibold mb-4 text-[#D4A574]">Información</h3>
             <ul className="space-y-3">
-              <li>
-                <a href="#" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
-                  Transparencia
-                </a>
-              </li>
-              <li>
-                <a href="#" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
-                  Información Financiera
-                </a>
-              </li>
               <li>
                 <a href="#" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
                   Avisos de Privacidad
