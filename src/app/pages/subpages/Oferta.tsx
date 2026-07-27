@@ -1,6 +1,11 @@
 import React from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
 import { ArrowRight, BookOpen, Compass, Briefcase, Award } from 'lucide-react';
+import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
+import tiGalleryRaw from '../../../data/galleries/TI.md?raw';
+import biotecnologiaGalleryRaw from '../../../data/galleries/BIOTECNOLOGIA.md?raw';
+import gastronomiaGalleryRaw from '../../../data/galleries/GASTRONOMIA.md?raw';
+import negociosGalleryRaw from '../../../data/galleries/NEGOCIOS.md?raw';
 
 interface CareerPageProps {
   title: string;
@@ -11,10 +16,27 @@ interface CareerPageProps {
   egreso: string[];
   campo: string[];
   materias: string[][];
+  galleryImages: string[];
   breadcrumbs: { name: string; path: string }[];
 }
 
-function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, materias, breadcrumbs }: CareerPageProps) {
+function parseGalleryMarkdown(content: string) {
+  return content
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.startsWith('-'))
+    .map((line) => line.replace(/^-+\s*/, '').trim())
+    .filter(Boolean);
+}
+
+const careerGalleries = {
+  ti: parseGalleryMarkdown(tiGalleryRaw),
+  biotecnologia: parseGalleryMarkdown(biotecnologiaGalleryRaw),
+  gastronomia: parseGalleryMarkdown(gastronomiaGalleryRaw),
+  negocios: parseGalleryMarkdown(negociosGalleryRaw),
+};
+
+function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, materias, galleryImages, breadcrumbs }: CareerPageProps) {
   return (
     <SubpageLayout title={title} breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
@@ -114,6 +136,33 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
             ))}
           </div>
         </div>
+
+        <div className="space-y-6">
+          <div className="text-center">
+            <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574]">
+              Galería de la carrera
+            </h3>
+            <p className="mt-2 font-['Inter'] text-sm text-gray-600 dark:text-gray-400">
+              Espacios, actividades y momentos que forman parte de la experiencia académica en UTOM.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {galleryImages.map((image, index) => (
+              <div
+                key={`${title}-gallery-${index}`}
+                className={`overflow-hidden rounded-[1.75rem] border border-gray-100 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900 ${
+                  index === 0 ? 'md:col-span-2 md:row-span-2' : ''
+                }`}
+              >
+                <ImageWithFallback
+                  src={image}
+                  alt={`${title} galería ${index + 1}`}
+                  className={`w-full object-cover ${index === 0 ? 'h-[320px] md:h-full min-h-[320px]' : 'h-[220px]'}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </SubpageLayout>
   );
@@ -160,6 +209,7 @@ export function OfertaTecnologias() {
         ['Estructura de Datos', 'Bases de Datos Relacionales', 'Programación Web I', 'Sistemas Operativos', 'Inglés II'],
         ['Programación Orientada a Objetos', 'Bases de Datos Distribuidas', 'Programación Web II', 'Redes de Computadoras II', 'Inglés III']
       ]}
+      galleryImages={careerGalleries.ti}
       breadcrumbs={breadcrumbs}
     />
   );
@@ -206,6 +256,7 @@ export function OfertaBiotecnologia() {
         ['Fisiología Vegetal', 'Química Orgánica', 'Microbiología General', 'Estadística Básica', 'Inglés II'],
         ['Bioquímica Aplicada', 'Termodinámica de Procesos', 'Cultivo de Tejidos', 'Biotecnología Ambiental', 'Inglés III']
       ]}
+      galleryImages={careerGalleries.biotecnologia}
       breadcrumbs={breadcrumbs}
     />
   );
@@ -252,6 +303,7 @@ export function OfertaGastronomia() {
         ['Técnicas Culinarias II', 'Cocina Mexicana Clásica', 'Panadería Básica', 'Costos y Presupuestos', 'Inglés II'],
         ['Cocina Internacional I', 'Bebidas y Coctelería', 'Conservación de Alimentos', 'Nutrición y Dietética', 'Inglés III']
       ]}
+      galleryImages={careerGalleries.gastronomia}
       breadcrumbs={breadcrumbs}
     />
   );
@@ -298,6 +350,7 @@ export function OfertaMercadotecnia() {
         ['Investigación de Mercados I', 'Marketing Digital I', 'Estrategias de Precios', 'Legislación de Negocios', 'Inglés II'],
         ['Investigación de Mercados II', 'Marketing Digital II', 'Canales de Distribución', 'Publicidad y Promoción', 'Inglés III']
       ]}
+      galleryImages={careerGalleries.negocios}
       breadcrumbs={breadcrumbs}
     />
   );

@@ -15,6 +15,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
   const [isMobileAccessibilityOpen, setIsMobileAccessibilityOpen] = useState(false);
   const [mobileMenus, setMobileMenus] = useState({
     conocenos: false,
+    conocenosCampus: false,
     estudiantes: false,
     oferta: false,
     transparencia: false,
@@ -53,7 +54,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
     }
   }, [isMenuOpen]);
 
-  const toggleMobileMenu = (menu: 'conocenos' | 'estudiantes' | 'oferta' | 'transparencia' | 'servicios') => {
+  const toggleMobileMenu = (menu: 'conocenos' | 'conocenosCampus' | 'estudiantes' | 'oferta' | 'transparencia' | 'servicios') => {
     setMobileMenus(prev => ({
       ...prev,
       [menu]: !prev[menu]
@@ -91,12 +92,20 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   <Link to="/conocenos/directorio" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
                     Directorio
                   </Link>
-                  <Link to="/conocenos/campus-maravatio" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
-                    Campus Maravatío
-                  </Link>
-                  <Link to="/conocenos/campus-zitacuaro" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
-                    Campus Zitácuaro
-                  </Link>
+                  <div className="relative group/campus">
+                    <button className="flex w-full items-center justify-between px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#D4A574] hover:text-[#0F5132]">
+                      <span>Campus</span>
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover/campus:-rotate-90" />
+                    </button>
+                    <div className="absolute left-full top-0 ml-1 w-48 rounded-xl border border-white/10 bg-[#0F5132] py-2 shadow-xl opacity-0 pointer-events-none -translate-x-2 transition-all duration-300 group-hover/campus:translate-x-0 group-hover/campus:opacity-100 group-hover/campus:pointer-events-auto dark:border-gray-800 dark:bg-gray-900">
+                      <Link to="/conocenos/campus-maravatio" className="block px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#D4A574] hover:text-[#0F5132]">
+                        Maravatío
+                      </Link>
+                      <Link to="/conocenos/campus-zitacuaro" className="block px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-[#D4A574] hover:text-[#0F5132]">
+                        Zitácuaro
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -251,12 +260,27 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   <Link to="/conocenos/directorio" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
                     Directorio
                   </Link>
-                  <Link to="/conocenos/campus-maravatio" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
-                    Campus Maravatío
-                  </Link>
-                  <Link to="/conocenos/campus-zitacuaro" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
-                    Campus Zitácuaro
-                  </Link>
+                  <div className="pt-1">
+                    <button
+                      onClick={() => toggleMobileMenu('conocenosCampus')}
+                      className="flex w-full items-center justify-between text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]"
+                    >
+                      <span className="font-semibold text-[#D4A574] uppercase tracking-wider text-[10px]">
+                        Campus
+                      </span>
+                      <ChevronDown className={`w-3.5 h-3.5 transition-transform ${mobileMenus.conocenosCampus ? 'rotate-180' : ''}`} />
+                    </button>
+                    {mobileMenus.conocenosCampus && (
+                      <div className="mt-1 pl-3 flex flex-col gap-1 border-l border-[#D4A574]/30">
+                        <Link to="/conocenos/campus-maravatio" onClick={() => setIsMenuOpen(false)} className="text-xs py-1 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
+                          Maravatío
+                        </Link>
+                        <Link to="/conocenos/campus-zitacuaro" onClick={() => setIsMenuOpen(false)} className="text-xs py-1 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
+                          Zitácuaro
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

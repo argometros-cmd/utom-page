@@ -1,0 +1,4 @@
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/626211111_925953129960796_632570964723959271_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/741464790_1698377874768287_8581735155841635989_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/650974895_954647940424648_6718805949152437525_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/684268388_993012173254891_6019718765002029047_n.jpg

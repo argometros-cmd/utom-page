@@ -1,0 +1,4 @@
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/683035657_993728586516583_9125268249860618585_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/706631751_1014480134441428_7397043329024353812_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/715592435_1023460643543377_6093961455672663354_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/730321018_1503343831269552_5887156137369678410_n.jpg

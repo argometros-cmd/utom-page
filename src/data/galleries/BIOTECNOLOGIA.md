@@ -1,0 +1,4 @@
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/671631959_983977917491650_7936625745380272430_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/672683375_982798994276209_505170163543978660_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/674339444_983978064158302_7244058262800310456_n.jpg
+-https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/675325863_983978110824964_8897798883204813530_n.jpg
