@@ -24,7 +24,8 @@ import {
 } from './pages/subpages/Conocenos';
 import {
   EstudiantesAspirantes,
-  EstudiantesModelo
+  EstudiantesModelo,
+  EstudiantesBecas
 } from './pages/subpages/Estudiantes';
 import DocentesPage from './pages/subpages/Docentes';
 import {
@@ -106,6 +107,7 @@ export default function App() {
           {/* Estudiantes */}
           <Route path="/estudiantes/aspirantes" element={<EstudiantesAspirantes />} />
           <Route path="/estudiantes/modelo-educativo" element={<EstudiantesModelo />} />
+          <Route path="/estudiantes/becas" element={<EstudiantesBecas />} />
           
           {/* Docentes */}
           <Route path="/docentes" element={<DocentesPage />} />

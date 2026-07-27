@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 import { ImageWithFallback } from '../ui/ImageWithFallback';
 import { Calendar, Trophy, Users, Bell } from 'lucide-react';
 
@@ -18,6 +19,7 @@ const noticias = [
     imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/645272099_947146884508087_8110588340482752856_n.jpg',
     fecha: 'Mayo 2026',
     icon: Calendar,
+    href: '/estudiantes/aspirantes',
   },
   {
     tipo: 'Comunidad',
@@ -38,6 +40,7 @@ const noticias = [
     imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/stock-general/629270895_927018403187602_8347093507890013032_n.jpg',
     fecha: 'Permanente',
     icon: Bell,
+    href: '/estudiantes/becas',
   },
 ];
 
@@ -112,9 +115,11 @@ export function NoticiasSection() {
             const noticiaImages = 'imagenes' in noticia && Array.isArray(noticia.imagenes) && noticia.imagenes.length > 0
               ? noticia.imagenes
               : [noticia.imagen];
+            const CardTag = 'href' in noticia && noticia.href ? Link : 'div';
             return (
-              <div
+              <CardTag
                 key={index}
+                to={'href' in noticia ? noticia.href : undefined}
                 className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800"
               >
                 <div className="relative h-40">
@@ -162,7 +167,7 @@ export function NoticiasSection() {
                     <span className="font-['Inter'] text-xs">{noticia.fecha}</span>
                   </div>
                 </div>
-              </div>
+              </CardTag>
             );
           })}
         </div>

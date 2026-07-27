@@ -112,6 +112,9 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   <Link to="/estudiantes/modelo-educativo" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
                     Modelo Educativo
                   </Link>
+                  <Link to="/estudiantes/becas" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
+                    Becas y Apoyos Económicos
+                  </Link>
                 </div>
               </div>
 
@@ -262,6 +265,9 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   </Link>
                   <Link to="/estudiantes/modelo-educativo" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
                     Modelo Educativo
+                  </Link>
+                  <Link to="/estudiantes/becas" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
+                    Becas y Apoyos Económicos
                   </Link>
                 </div>
               )}

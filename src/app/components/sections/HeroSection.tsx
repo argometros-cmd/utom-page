@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 import { ArrowRight, Award, Building2, ChevronLeft, ChevronRight, GraduationCap, Handshake } from 'lucide-react';
 
 // Componente para animar el conteo de números
@@ -145,9 +146,12 @@ export function HeroSection() {
                   <span>Conoce Nuestras Carreras</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="bg-[#D4A574] dark:bg-[#0F5132] text-white font-['Montserrat'] font-semibold px-8 py-3.5 rounded-xl hover:bg-[#c19563] dark:hover:bg-[#0d4228] transition-all shadow-md hover:shadow-lg text-sm">
+                <Link
+                  to="/#aspirantes"
+                  className="bg-[#D4A574] dark:bg-[#0F5132] text-white font-['Montserrat'] font-semibold px-8 py-3.5 rounded-xl hover:bg-[#c19563] dark:hover:bg-[#0d4228] transition-all shadow-md hover:shadow-lg text-sm inline-flex items-center justify-center"
+                >
                   Proceso de Admisión
-                </button>
+                </Link>
               </div>
             </div>
 
