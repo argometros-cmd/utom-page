@@ -43,6 +43,16 @@ const noticias = [
     icon: Bell,
     href: '/estudiantes/becas',
   },
+  {
+    tipo: 'Información',
+    titulo: 'Calendario Escolar 2026',
+    descripcion: 'Consulta el calendario oficial con fechas clave del ciclo escolar vigente.',
+    imagen: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/docs/CALENDARIO-UTOM-2026.png',
+    fecha: 'Julio 2026',
+    icon: Calendar,
+    href: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/docs/CALENDARIO-2026.pdf',
+    external: true,
+  },
 ];
 
 export function NoticiasSection() {
@@ -116,12 +126,59 @@ export function NoticiasSection() {
             const noticiaImages = 'imagenes' in noticia && Array.isArray(noticia.imagenes) && noticia.imagenes.length > 0
               ? noticia.imagenes
               : [noticia.imagen];
-            const CardTag = 'href' in noticia && noticia.href ? Link : 'div';
+            const isLinkedCard = 'href' in noticia && Boolean(noticia.href);
+            const isExternalCard = 'external' in noticia && noticia.external;
+            const cardClassName = 'bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800';
+
+            if (isLinkedCard && isExternalCard) {
+              return (
+                <a
+                  key={index}
+                  href={noticia.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClassName}
+                >
+                  <div className="relative h-40">
+                    <ImageWithFallback
+                      src={noticia.imagen}
+                      alt={noticia.titulo}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-3 left-3">
+                      <span className="inline-block px-3 py-1.5 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-lg text-xs font-['Inter'] font-semibold text-[#0F5132] dark:text-[#D4A574]">
+                        {noticia.tipo}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-[#D4A574]/10 dark:bg-[#D4A574]/20 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-5 h-5 text-[#D4A574]" />
+                      </div>
+                      <h3 className="font-['Montserrat'] font-semibold text-[#0F5132] dark:text-[#D4A574] leading-tight">
+                        {noticia.titulo}
+                      </h3>
+                    </div>
+                    <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">
+                      {noticia.descripcion}
+                    </p>
+                    <div className="flex items-center gap-2 text-gray-500">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-['Inter'] text-xs">{noticia.fecha}</span>
+                    </div>
+                  </div>
+                </a>
+              );
+            }
+
+            const CardTag = isLinkedCard ? Link : 'div';
             return (
               <CardTag
                 key={index}
                 to={'href' in noticia ? noticia.href : undefined}
-                className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800"
+                className={cardClassName}
               >
                 <div className="relative h-40">
                   {isIndustryCard && noticiaImages.length > 1 ? (

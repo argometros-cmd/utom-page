@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { useEffect } from 'react';
 import { Header } from './components/layout/Header';
-import { HeroSection } from './components/sections/HeroSection';
+import { HeroHighlightsSection, HeroSection } from './components/sections/HeroSection';
 import { CarrerasSection } from './components/sections/CarrerasSection';
 import { AspirantesSection } from './components/sections/AspirantesSection';
 import { NoticiasSection } from './components/sections/NoticiasSection';
@@ -35,7 +35,10 @@ import {
   OfertaMercadotecnia
 } from './pages/subpages/Oferta';
 import TransparenciaPage from './pages/subpages/Transparencia';
-import ServiciosVinculacionPage, { ServiciosTitulacionPage } from './pages/subpages/ServiciosVinculacion';
+import ServiciosVinculacionPage, {
+  ServiciosDocumentacionEscolarPage,
+  ServiciosTitulacionPage,
+} from './pages/subpages/ServiciosVinculacion';
 import ContactoPage from './pages/subpages/Contacto';
 
 function ScrollToHashElement() {
@@ -72,9 +75,10 @@ function LandingPage() {
       <Header />
       <main>
         <HeroSection />
+        <NoticiasSection />
+        <HeroHighlightsSection />
         <CarrerasSection />
         <AspirantesSection />
-        <NoticiasSection />
         <CallToAction />
         <ContactoSection />
       </main>
@@ -124,6 +128,7 @@ export default function App() {
           {/* Servicios y Vinculación */}
           <Route path="/servicios-vinculacion" element={<ServiciosVinculacionPage />} />
           <Route path="/servicios-vinculacion/titulacion" element={<ServiciosTitulacionPage />} />
+          <Route path="/servicios-vinculacion/documentacion-escolar" element={<ServiciosDocumentacionEscolarPage />} />
           
           {/* Contacto */}
           <Route path="/contacto" element={<ContactoPage />} />

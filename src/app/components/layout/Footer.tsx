@@ -116,7 +116,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
+                <a
+                  href="https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/docs/CALENDARIO-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors"
+                >
                   Calendario Escolar
                 </a>
               </li>

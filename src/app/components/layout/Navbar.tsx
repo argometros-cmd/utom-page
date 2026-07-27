@@ -114,7 +114,7 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                     Modelo Educativo
                   </Link>
                   <Link to="/estudiantes/becas" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
-                    Becas y Apoyos Económicos
+                    Becas
                   </Link>
                 </div>
               </div>
@@ -190,6 +190,9 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   </Link>
                   <Link to="/servicios-vinculacion/titulacion" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
                     Titulación
+                  </Link>
+                  <Link to="/servicios-vinculacion/documentacion-escolar" className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
+                    Documentación Escolar
                   </Link>
                 </div>
               </div>
@@ -356,6 +359,9 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   </Link>
                   <Link to="/servicios-vinculacion/titulacion" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
                     Titulación
+                  </Link>
+                  <Link to="/servicios-vinculacion/documentacion-escolar" onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
+                    Documentación Escolar
                   </Link>
                 </div>
               )}
