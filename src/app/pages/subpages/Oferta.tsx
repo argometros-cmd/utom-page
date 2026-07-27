@@ -146,18 +146,16 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
               Espacios, actividades y momentos que forman parte de la experiencia académica en UTOM.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="columns-1 gap-4 space-y-4 md:columns-2 xl:columns-3">
             {galleryImages.map((image, index) => (
               <div
                 key={`${title}-gallery-${index}`}
-                className={`overflow-hidden rounded-[1.75rem] border border-gray-100 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900 ${
-                  index === 0 ? 'md:col-span-2 md:row-span-2' : ''
-                }`}
+                className="break-inside-avoid overflow-hidden rounded-[1.75rem] border border-gray-100 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900"
               >
                 <ImageWithFallback
                   src={image}
                   alt={`${title} galería ${index + 1}`}
-                  className={`w-full object-cover ${index === 0 ? 'h-[320px] md:h-full min-h-[320px]' : 'h-[220px]'}`}
+                  className="h-auto w-full object-contain"
                 />
               </div>
             ))}

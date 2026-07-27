@@ -1,4 +1,8 @@
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/671631959_983977917491650_7936625745380272430_n.jpg
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/672683375_982798994276209_505170163543978660_n.jpg
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/674339444_983978064158302_7244058262800310456_n.jpg
--https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/675325863_983978110824964_8897798883204813530_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/675325863_983978110824964_8897798883204813530_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/674045603_982798937609548_4369706305738832153_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/672010324_983509510871824_5039398324625875699_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/673822027_982798897609552_1906113898492109332_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/672662379_982798414276267_8233755795306822693_n.jpg

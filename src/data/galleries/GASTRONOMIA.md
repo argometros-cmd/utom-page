@@ -2,3 +2,6 @@
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/578443319_859962463226530_5216266510845309695_n.jpg
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/586371507_868669615689148_2835618607565761098_n.jpg
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/684255308_993015536587888_3938365081946993335_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/748330927_861434436755248_3055291567004835012_n.jpeg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/593941927_881100467779396_1272278538934223457_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/721189628_2387511008425955_7891719609722798652_n.jpeg

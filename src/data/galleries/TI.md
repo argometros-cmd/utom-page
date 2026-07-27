@@ -2,3 +2,8 @@
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/706631751_1014480134441428_7397043329024353812_n.jpg
 - https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/715592435_1023460643543377_6093961455672663354_n.jpg
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/730321018_1503343831269552_5887156137369678410_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/746909376_27833065622979826_3182800221719270118_n.jpeg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/715360532_1023460776876697_7243551520396686937_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/713144821_1021385320417576_6606587708504146565_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/585566215_867096909179752_7488950268280357912_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/684492607_993728629849912_4996839167842884967_n.jpg

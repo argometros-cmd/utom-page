@@ -2,3 +2,7 @@
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/741464790_1698377874768287_8581735155841635989_n.jpg
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/650974895_954647940424648_6718805949152437525_n.jpg
 -https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/684268388_993012173254891_6019718765002029047_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/627681501_925953196627456_4503985614968816859_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/650245551_954648233757952_1956865833868068115_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/650974895_954647940424648_6718805949152437525_n.jpg
+- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/684066491_993013049921470_1461279381203166065_n.jpg
