@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
 import { AspirantesSection } from '../../components/sections/AspirantesSection';
+import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
 import { 
   Lightbulb, 
   Clock, 
@@ -123,6 +124,7 @@ export function EstudiantesBecas() {
       title: 'Beca Jóvenes Escribiendo el Futuro',
       tag: 'Federal',
       tagColor: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300',
+      image: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/logos/jovenes-escribiendo-el-futuro.jpg',
       description: 'Programa del Gobierno Federal dirigido a estudiantes de licenciatura o técnico superior universitario inscritos en escuelas públicas con alto nivel de marginación.',
       benefit: 'Apoyo económico mensual de $2,800 MXN durante el ciclo escolar vigente (sujeto a las reglas de operación de la Coordinación Nacional de Becas para el Bienestar Benito Juárez).',
       requirements: [
@@ -132,6 +134,21 @@ export function EstudiantesBecas() {
         'Tener un expediente de inscripción completo.'
       ],
       icon: GraduationCap,
+    },
+    {
+      title: 'Beca Gertrudis Bocanegra',
+      tag: 'Estatal',
+      tagColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300',
+      image: 'https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/logos/gertrudis-bocanegra.jpg',
+      description: 'Apoyo educativo impulsado para fortalecer la permanencia y el desempeño académico de estudiantes michoacanos, priorizando el acceso equitativo a oportunidades de formación superior.',
+      benefit: 'Apoyo económico o exención parcial orientada a disminuir los gastos escolares de estudiantes inscritos en instituciones públicas del estado.',
+      requirements: [
+        'Ser estudiante inscrito en la UTOM o institución pública participante.',
+        'Acreditar residencia en Michoacán y cumplir con el perfil socioeconómico solicitado.',
+        'Presentar documentación escolar y personal completa en los periodos de convocatoria.',
+        'Mantener un desempeño académico y conducta acordes con los lineamientos del programa.'
+      ],
+      icon: Award,
     },
     {
       title: 'Beca de Aprovechamiento / Excelencia Académica',
@@ -222,29 +239,31 @@ export function EstudiantesBecas() {
             <h3 className="font-['Montserrat'] font-bold text-2xl lg:text-3xl text-[#0F5132] dark:text-[#D4A574] mb-2">
               Conoce Nuestras Becas
             </h3>
-            <p className="font-['Inter'] text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
-              Explora las diferentes alternativas vigentes para alumnos regulares, desde programas federales hasta estímulos de excelencia internos.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {becasData.map((beca, index) => {
-              const IconComponent = beca.icon;
+            {becasData.slice(0, 2).map((beca, index) => {
               return (
                 <div 
                   key={index} 
-                  className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-150 dark:border-gray-800/80 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                >
+                className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-150 dark:border-gray-800/80 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+              >
                   <div>
-                    {/* Header Tarjeta */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="p-4 bg-[#D4A574]/10 dark:bg-[#D4A574]/5 rounded-2xl text-[#0F5132] dark:text-[#D4A574]">
-                        <IconComponent className="w-8 h-8" />
-                      </div>
+                    <div className="mb-3 flex justify-end">
                       <span className={`text-xs font-bold font-['Inter'] px-3.5 py-1.5 rounded-full ${beca.tagColor}`}>
                         {beca.tag}
                       </span>
                     </div>
+
+                    {'image' in beca && beca.image && (
+                      <div className="mb-6 overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-gray-950">
+                        <ImageWithFallback
+                          src={beca.image}
+                          alt={beca.title}
+                          className="h-48 w-full object-cover object-center"
+                        />
+                      </div>
+                    )}
 
                     {/* Contenido Tarjeta */}
                     <h4 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-3">
