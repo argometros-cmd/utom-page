@@ -5,6 +5,8 @@ import { navigationLabels, transparencyYears } from '../../data/navigation';
 import { TomBotButton } from '../widgets/TomBotButton';
 import { AccessibilityPanel } from '../widgets/AccessibilityMenu';
 
+const transparencyPortalUrl = 'https://consultapublicamx.plataformadetransparencia.org.mx/?%20idEntidad=MTY%3D&idSujetoObligado=MTgxMjI%3D#inicio';
+
 interface NavbarProps {
   isMenuOpen: boolean;
   setIsMenuOpen: (open: boolean) => void;
@@ -179,6 +181,14 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                   <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
                 </button>
                 <div className="absolute top-12 left-0 w-48 bg-[#0F5132] dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-xl shadow-xl py-3 z-50 opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+                  <a
+                    href={transparencyPortalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white"
+                  >
+                    Transparencia
+                  </a>
                   {transparencyYears.map((y) => (
                     <Link key={y} to={`/transparencia/${y}`} className="block px-4 py-2.5 text-xs font-medium hover:bg-[#D4A574] hover:text-[#0F5132] transition-colors text-white">
                       Ejercicio Fiscal {y}
@@ -358,6 +368,14 @@ export function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
               </button>
               {mobileMenus.transparencia && (
                 <div className="pl-4 py-2 flex flex-col gap-2 bg-gray-50 dark:bg-gray-900/40 rounded-xl mt-1">
+                  <a
+                    href={transparencyPortalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]"
+                  >
+                    Transparencia
+                  </a>
                   {transparencyYears.map((y) => (
                     <Link key={y} to={`/transparencia/${y}`} onClick={() => setIsMenuOpen(false)} className="text-xs py-1.5 text-gray-600 dark:text-gray-400 hover:text-[#0F5132] dark:hover:text-[#D4A574]">
                       Ejercicio Fiscal {y}
