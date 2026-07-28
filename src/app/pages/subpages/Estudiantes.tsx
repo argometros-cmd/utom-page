@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
 import { AspirantesSection } from '../../components/sections/AspirantesSection';
 import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
-import { 
-  Lightbulb, 
-  Clock, 
-  Compass, 
-  GraduationCap, 
-  Award, 
-  Heart, 
-  Handshake, 
-  CheckCircle2, 
-  Mail, 
-  PhoneCall, 
-  FileText, 
-  ChevronDown, 
-  ChevronUp 
+import {
+  Lightbulb,
+  Clock,
+  Compass,
+  GraduationCap,
+  Award,
+  Heart,
+  Handshake,
+  CheckCircle2,
+  Mail,
+  PhoneCall,
+  FileText,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
 // ----------------------------------------------------
@@ -36,7 +36,7 @@ export function EstudiantesAspirantes() {
             Te invitamos a registrarte en línea y comenzar tu camino académico. Nuestro proceso está diseñado para identificar tu potencial y brindarte las herramientas de aprendizaje práctico que el sector laboral demanda. Explora a continuación los requisitos detallados y las fechas límite.
           </p>
         </div>
-        
+
         {/* Renders existing styled AspirantesSection inside the layout page */}
         <div className="-mx-4 sm:-mx-6 lg:-mx-8">
           <AspirantesSection />
@@ -89,7 +89,7 @@ export function EstudiantesModelo() {
           </div>
 
           <div className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-150 dark:border-gray-800 shadow-sm transition-colors duration-300">
-            <div className="w-12 h-12 bg-[#D4A574]/10 rounded-xl flex items-center justify-center text-[#D4A574] mb-6"> 
+            <div className="w-12 h-12 bg-[#D4A574]/10 rounded-xl flex items-center justify-center text-[#D4A574] mb-6">
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="font-['Montserrat'] font-bold text-xl text-[#0F5132] dark:text-[#D4A574] mb-3">Estadías Profesionales</h3>
@@ -195,10 +195,6 @@ export function EstudiantesBecas() {
 
   const faqData = [
     {
-      question: '¿Puedo acumular la beca federal "Jóvenes Escribiendo el Futuro" con una beca interna de la UTOM?',
-      answer: 'Sí. Las becas de Aprovechamiento Académico (exención de pago) y Apoyo Alimentario son programas institucionales de la UTOM diseñados para motivar tu desempeño o dar soporte social, por lo cual no son consideradas incompatibles con la beca federal de manutención, a menos que las reglas específicas de la convocatoria federal del año fiscal indiquen lo contrario.'
-    },
-    {
       question: '¿Cuál es el periodo para solicitar las becas de aprovechamiento académico?',
       answer: 'La convocatoria para las Becas de Aprovechamiento se publica al finalizar cada cuatrimestre e iniciar el proceso de reinscripción. Debes presentar tu boleta/kárdex oficial del cuatrimestre terminado y llenar el formato correspondiente en el Departamento de Servicios Escolares en las primeras dos semanas de clases.'
     },
@@ -215,7 +211,7 @@ export function EstudiantesBecas() {
   return (
     <SubpageLayout title="Becas y Apoyos Económicos" breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
-        
+
         {/* Banner Explicativo de Introducción */}
         <div className="bg-gradient-to-br from-[#0F5132] to-[#1a7552] dark:from-gray-900 dark:to-gray-850 text-white rounded-3xl p-8 lg:p-12 shadow-md relative overflow-hidden">
           <div className="relative z-10 max-w-4xl">
@@ -244,8 +240,8 @@ export function EstudiantesBecas() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {becasData.slice(0, 2).map((beca, index) => {
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                 className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-150 dark:border-gray-800/80 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                   <div>
@@ -354,8 +350,8 @@ export function EstudiantesBecas() {
             {faqData.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="bg-white dark:bg-gray-900 border border-gray-150 dark:border-gray-800/80 rounded-2xl overflow-hidden transition-colors duration-300"
                 >
                   <button
@@ -371,7 +367,7 @@ export function EstudiantesBecas() {
                       <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                     )}
                   </button>
-                  
+
                   {isOpen && (
                     <div className="px-6 pb-6 border-t border-gray-100 dark:border-gray-800 pt-4 bg-gray-50/50 dark:bg-gray-950/20">
                       <p className="font-['Inter'] text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -396,7 +392,7 @@ export function EstudiantesBecas() {
               <p className="font-['Inter'] text-sm text-white/95 leading-relaxed max-w-xl">
                 Nuestro Departamento de Servicios Escolares está a tu disposición para orientarte y recibir tus expedientes. Escríbenos o visítanos directamente en las oficinas del campus.
               </p>
-              
+
               <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2">
                 <div className="flex items-center gap-2 text-xs font-['Inter']">
                   <Mail className="w-4 h-4 text-[#D4A574]" />
@@ -414,8 +410,8 @@ export function EstudiantesBecas() {
             </div>
 
             <div className="md:col-span-4 flex justify-start md:justify-end">
-              <a 
-                href="mailto:becas@utom.edu.mx" 
+              <a
+                href="mailto:becas@utom.edu.mx"
                 className="bg-[#D4A574] hover:bg-[#c39463] text-[#0F5132] font-['Montserrat'] font-bold text-xs px-6 py-4 rounded-2xl shadow transition-colors duration-300 w-full md:w-auto text-center cursor-pointer"
               >
                 Enviar un Correo

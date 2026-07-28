@@ -1,0 +1,45 @@
+- TI
+  -- Desarrollo de software multiplataforma
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/35.4_MCP_LIC_EN_ING_EN_TIID_(SOFTWARE)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/35.4_PES_LIC_EN_ING_EN_TIID_(SOFTWARE)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/35.4_PPE_LIC_EN_ING_EN_TIID_(SOFTWARE)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/35.4_PPI_LIC_EN_ING_EN_TID_(SOFTWARE)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/DESARROLLO_DE_SOFTWARE_MULTIPLATAFORMA.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/INFORMACION_REGISTRO.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Desarrollo-de-software-multiplataforma/PRESENTACION_PE.pdf
+  -- Entornos virtuales y negocios digitales
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/35.1_MCP_LIC_EN_ING_EN_TIID_(ENTORNOS-VIRTUALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/35.1_PES_LIC_EN_ING_EN_TIID_(ENTORNOS-VIRTUALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/35.1_PPE_LIC_EN_ING_EN_TIID_(ENTORNOS-VIRTUALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/35.1_PPI_LIC_EN_ING_EN_TIID_(ENTORNOS-VIRTUALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/ENTORNOS-VIRTUALES-Y-NEGOCIOS-DIGITALES.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/INFORMACION_REGISTRO.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Entornos-virtuales-y-negocios-digitales/PRESENTACION_PE.pdf
+  -- Infraestructura de redes digitales
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/35.3_MCP_LIC_EN_ING_EN_TIID_(REDES-DIGITALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/35.3_PES_LIC_EN_ING_EN_TIID_(REDES-DIGITALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/35.3_PPE_LIC_EN_ING_EN_TIID_(REDES-DIGITALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/35.3_PPI_LIC_EN_ING_EN_TIID_(REDES-DIGITALES)2024.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/INFORMACION_REGISTRO.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/INFRAESTRUCTURA_DE_REDES_DIGITALES.pdf
+    --- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/ti/mapa-curriular/Infraestructura-de-redes-digitales/PRESENTACION_PE.pdf
+- GASTRONOMIA
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/mapa-curricular/07.1_MCP_LIC_EN_GASTRONOMIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/mapa-curricular/07.1_MCR_LIC_EN_GASTRONOMIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/mapa-curricular/07.1_PES_LIC_EN_GASTRONOMIA_2024.pdf
+ -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/mapa-curricular/07.1_PPE_LIC_EN_GASTRONOMIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/gastronomia/mapa-curricular/07.1_PPI_LIC_EN_GASTRONOMIA_2024.pdf
+- BIOTECNOLOGIA
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/42.1_MCP_LIC_EN_ING_EN_BIOTECNOLOGIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/42.1_PES_LIC_EN_ING_EN_BIOTECNOLOGIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/42.1_PPE_LIC_EN_ING_EN_BIOTECNOLOGIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/42.1_PPI_LIC_EN_ING_EN_BIOTECNOLOGIA_2024.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/INFORMACION_REGISTRO.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/INGENIERIA_EN_BIOTECNOLOGIA.pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/biotecnologia/mapa-curricular/PRESENTACION_PE.pdf
+- MERCADOTECNIA
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/mapa-curricular/33.1_MCP_LIC_EN_NEGOCIOS_Y_MERCADOTECNIA_2024_(MERCA).pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/mapa-curricular/33.1_MCR_LIC_EN_NEGOCIOS_Y_MERCADOTECNIA_2024_(MERCA).pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/mapa-curricular/33.1_PES_LIC_EN_NEGOCIOS_Y_MERCADOTECNIA_202_(MERCA).pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/mapa-curricular/33.1_PPE_LIC_EN_NEGOCIOS_Y_MERCADOTECNIA_2024_(MERCA).pdf
+  -- https://gnzneytwugcebhaxtzem.supabase.co/storage/v1/object/public/media-publica/carreras/negocios/mapa-curricular/33.1_PPI%20LIC_EN%20NEGOCIOS_Y_MERCADOTECNIA_2024_(MERCA).pdf

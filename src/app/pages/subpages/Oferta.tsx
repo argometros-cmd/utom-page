@@ -1,11 +1,23 @@
 import React from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { ArrowRight, BookOpen, Compass, Briefcase, Award } from 'lucide-react';
+import { BookOpen, Compass, Briefcase, Award, Download } from 'lucide-react';
 import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
+import studyPlanLinksRaw from '../../../data/map_curriculares.md?raw';
 import tiGalleryRaw from '../../../data/galleries/TI.md?raw';
 import biotecnologiaGalleryRaw from '../../../data/galleries/BIOTECNOLOGIA.md?raw';
 import gastronomiaGalleryRaw from '../../../data/galleries/GASTRONOMIA.md?raw';
 import negociosGalleryRaw from '../../../data/galleries/NEGOCIOS.md?raw';
+
+interface StudyPlanCard {
+  id: string;
+  title: string;
+  pdfs?: StudyPlanPdf[];
+}
+
+interface StudyPlanPdf {
+  label: string;
+  url: string;
+}
 
 interface CareerPageProps {
   title: string;
@@ -15,7 +27,7 @@ interface CareerPageProps {
   ingreso: string[];
   egreso: string[];
   campo: string[];
-  materias: string[][];
+  studyPlanCards: StudyPlanCard[];
   galleryImages: string[];
   breadcrumbs: { name: string; path: string }[];
 }
@@ -29,6 +41,98 @@ function parseGalleryMarkdown(content: string) {
     .filter(Boolean);
 }
 
+function formatPdfLabel(url: string) {
+  const fileName = url.split('/').pop() ?? url;
+  const decoded = decodeURIComponent(fileName).replace(/\.pdf$/i, '');
+  return decoded.replace(/[_-]+/g, ' ').trim();
+}
+
+function parseStudyPlanLinks(content: string) {
+  const cardsByCareer: Record<string, StudyPlanCard[]> = {
+    ti: [
+      { id: 'ti-cuatrimestre-1', title: 'Desarrollo de software multiplataforma', pdfs: [] },
+      { id: 'ti-cuatrimestre-2', title: 'Entornos virtuales y negocios digitales', pdfs: [] },
+      { id: 'ti-cuatrimestre-3', title: 'Infraestructura de redes digitales', pdfs: [] }
+    ],
+    biotecnologia: [{ id: 'biotec-plan-estudios', title: 'Plan de estudios', pdfs: [] }],
+    gastronomia: [{ id: 'gastro-plan-estudios', title: 'Plan de estudios', pdfs: [] }],
+    negocios: [{ id: 'negocios-plan-estudios', title: 'Plan de estudios', pdfs: [] }]
+  };
+
+  const tiTitleMap: Record<string, string> = {
+    'desarrollo de software multiplataforma': 'ti-cuatrimestre-1',
+    'entornos virtuales y negocios digitales': 'ti-cuatrimestre-2',
+    'infraestructura de redes digitales': 'ti-cuatrimestre-3'
+  };
+
+  let currentCareer: keyof typeof cardsByCareer | null = null;
+  let currentTiCardId: string | null = null;
+
+  for (const rawLine of content.split('\n')) {
+    const line = rawLine.trim();
+    if (!line) continue;
+
+    if (line.startsWith('- ')) {
+      const careerName = line.slice(2).trim().toLowerCase();
+
+      if (careerName === 'ti') {
+        currentCareer = 'ti';
+        currentTiCardId = null;
+        continue;
+      }
+
+      if (careerName === 'gastronomia') {
+        currentCareer = 'gastronomia';
+        currentTiCardId = null;
+        continue;
+      }
+
+      if (careerName === 'biotecnologia') {
+        currentCareer = 'biotecnologia';
+        currentTiCardId = null;
+        continue;
+      }
+
+      if (careerName === 'mercadotecnia') {
+        currentCareer = 'negocios';
+        currentTiCardId = null;
+      }
+      continue;
+    }
+
+    if (line.startsWith('-- ')) {
+      const value = line.slice(3).trim();
+
+      if (currentCareer === 'ti' && !value.startsWith('http')) {
+        currentTiCardId = tiTitleMap[value.toLowerCase()] ?? null;
+        continue;
+      }
+
+      if (value.startsWith('http') && currentCareer && currentCareer !== 'ti') {
+        cardsByCareer[currentCareer][0].pdfs ??= [];
+        cardsByCareer[currentCareer][0].pdfs?.push({
+          label: formatPdfLabel(value),
+          url: value
+        });
+      }
+      continue;
+    }
+
+    if (line.startsWith('--- ')) {
+      const value = line.slice(4).trim();
+      if (currentCareer === 'ti' && currentTiCardId && value.startsWith('http')) {
+        const targetCard = cardsByCareer.ti.find((card) => card.id === currentTiCardId);
+        targetCard?.pdfs?.push({
+          label: formatPdfLabel(value),
+          url: value
+        });
+      }
+    }
+  }
+
+  return cardsByCareer;
+}
+
 const careerGalleries = {
   ti: parseGalleryMarkdown(tiGalleryRaw),
   biotecnologia: parseGalleryMarkdown(biotecnologiaGalleryRaw),
@@ -36,11 +140,60 @@ const careerGalleries = {
   negocios: parseGalleryMarkdown(negociosGalleryRaw),
 };
 
-function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, materias, galleryImages, breadcrumbs }: CareerPageProps) {
+const careerStudyPlanCards = parseStudyPlanLinks(studyPlanLinksRaw);
+
+function StudyPlanSection({ cards }: { cards: StudyPlanCard[] }) {
+  const cardWidthClass =
+    cards.length === 1
+      ? 'w-full max-w-md'
+      : cards.length === 2
+        ? 'w-full md:w-[calc(50%-0.75rem)] max-w-md'
+        : 'w-full md:w-[calc(50%-0.75rem)] xl:w-[calc(33.333%-1rem)]';
+
+  return (
+    <div className="space-y-6">
+      <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574] text-center">
+        Estructura del Plan de Estudios
+      </h3>
+      <div className="flex flex-wrap justify-center gap-6">
+        {cards.map((card) => (
+          <div key={card.id} className={`${cardWidthClass} bg-white dark:bg-gray-900 border border-gray-150 dark:border-gray-800 rounded-2xl p-6 shadow-sm`}>
+            <h4 className="font-['Montserrat'] font-semibold text-[#0F5132] dark:text-[#D4A574] border-b border-gray-50 dark:border-gray-850 pb-2 mb-4">
+              {card.title}
+            </h4>
+            {card.pdfs?.length ? (
+              <div className="pt-1">
+                <p className="font-['Montserrat'] text-sm font-semibold text-[#0F5132] dark:text-[#D4A574] mb-3">
+                  Archivos PDF
+                </p>
+                <div className="space-y-2">
+                  {card.pdfs.map((pdf) => (
+                    <a
+                      key={`${card.id}-${pdf.url}`}
+                      href={pdf.url}
+                      download
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between gap-3 text-xs font-['Inter'] text-[#D4A574] hover:underline"
+                    >
+                      <span>{pdf.label}</span>
+                      <Download className="w-3.5 h-3.5 flex-shrink-0 text-[#D4A574]" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, studyPlanCards, galleryImages, breadcrumbs }: CareerPageProps) {
   return (
     <SubpageLayout title={title} breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
-        {/* Intro */}
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-8 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D4A574]/15 text-[#D4A574] rounded-full text-xs font-bold uppercase tracking-wider">
@@ -66,7 +219,6 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
           </div>
         </div>
 
-        {/* Perfil de Ingreso y Egreso */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white dark:bg-gray-900 border border-gray-150 dark:border-gray-800 rounded-3xl p-8 shadow-sm transition-colors duration-300">
             <div className="flex items-center gap-3 mb-6">
@@ -99,7 +251,6 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
           </div>
         </div>
 
-        {/* Campo Laboral */}
         <div className="bg-gray-50 dark:bg-gray-900 rounded-3xl p-8 lg:p-10 border border-gray-150 dark:border-gray-800 transition-colors duration-300">
           <div className="flex items-center gap-3 mb-6">
             <Briefcase className="w-6 h-6 text-[#D4A574]" />
@@ -115,27 +266,7 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
           </div>
         </div>
 
-        {/* Mapa Curricular */}
-        <div className="space-y-6">
-          <h3 className="font-['Montserrat'] font-bold text-2xl text-[#0F5132] dark:text-[#D4A574] text-center">Estructura del Plan de Estudios</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            {materias.map((semestre, idx) => (
-              <div key={idx} className="bg-white dark:bg-gray-900 border border-gray-150 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
-                <h4 className="font-['Montserrat'] font-semibold text-[#0F5132] dark:text-[#D4A574] border-b border-gray-50 dark:border-gray-850 pb-2 mb-4">
-                  Cuatrimestre {idx + 1}
-                </h4>
-                <ul className="space-y-2">
-                  {semestre.map((mat, i) => (
-                    <li key={i} className="font-['Inter'] text-xs text-gray-650 dark:text-gray-400 flex items-center gap-2">
-                      <ArrowRight className="w-3.5 h-3.5 text-[#D4A574] flex-shrink-0" />
-                      <span>{mat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
+        <StudyPlanSection cards={studyPlanCards} />
 
         <div className="space-y-6">
           <div className="text-center">
@@ -166,9 +297,6 @@ function CareerTemplate({ title, level, imageUrl, desc, ingreso, egreso, campo, 
   );
 }
 
-// ----------------------------------------------------
-// 1. Tecnologías de la Información
-// ----------------------------------------------------
 export function OfertaTecnologias() {
   const breadcrumbs = [
     { name: 'Oferta Educativa', path: '#' },
@@ -202,20 +330,13 @@ export function OfertaTecnologias() {
         'Centros de datos y ciberseguridad',
         'Freelancing de soluciones digitales'
       ]}
-      materias={[
-        ['Introducción a la Programación', 'Matemáticas Discretas', 'Redes de Computadoras I', 'Arquitectura de Computadoras', 'Inglés I'],
-        ['Estructura de Datos', 'Bases de Datos Relacionales', 'Programación Web I', 'Sistemas Operativos', 'Inglés II'],
-        ['Programación Orientada a Objetos', 'Bases de Datos Distribuidas', 'Programación Web II', 'Redes de Computadoras II', 'Inglés III']
-      ]}
+      studyPlanCards={careerStudyPlanCards.ti}
       galleryImages={careerGalleries.ti}
       breadcrumbs={breadcrumbs}
     />
   );
 }
 
-// ----------------------------------------------------
-// 2. Biotecnología
-// ----------------------------------------------------
 export function OfertaBiotecnologia() {
   const breadcrumbs = [
     { name: 'Oferta Educativa', path: '#' },
@@ -249,20 +370,13 @@ export function OfertaBiotecnologia() {
         'Empresas de biorremediación ambiental',
         'Consultoría biotecnológica certificada'
       ]}
-      materias={[
-        ['Química General', 'Biología Celular', 'Matemáticas Aplicadas', 'Seguridad en Laboratorios', 'Inglés I'],
-        ['Fisiología Vegetal', 'Química Orgánica', 'Microbiología General', 'Estadística Básica', 'Inglés II'],
-        ['Bioquímica Aplicada', 'Termodinámica de Procesos', 'Cultivo de Tejidos', 'Biotecnología Ambiental', 'Inglés III']
-      ]}
+      studyPlanCards={careerStudyPlanCards.biotecnologia}
       galleryImages={careerGalleries.biotecnologia}
       breadcrumbs={breadcrumbs}
     />
   );
 }
 
-// ----------------------------------------------------
-// 3. Gastronomía
-// ----------------------------------------------------
 export function OfertaGastronomia() {
   const breadcrumbs = [
     { name: 'Oferta Educativa', path: '#' },
@@ -296,20 +410,13 @@ export function OfertaGastronomia() {
         'Emprendimiento de marcas de comida',
         'Gestión de comedores institucionales'
       ]}
-      materias={[
-        ['Técnicas Culinarias I', 'Bases de Repostería', 'Sanidad e Higiene Alimentaria', 'Administración Básica', 'Inglés I'],
-        ['Técnicas Culinarias II', 'Cocina Mexicana Clásica', 'Panadería Básica', 'Costos y Presupuestos', 'Inglés II'],
-        ['Cocina Internacional I', 'Bebidas y Coctelería', 'Conservación de Alimentos', 'Nutrición y Dietética', 'Inglés III']
-      ]}
+      studyPlanCards={careerStudyPlanCards.gastronomia}
       galleryImages={careerGalleries.gastronomia}
       breadcrumbs={breadcrumbs}
     />
   );
 }
 
-// ----------------------------------------------------
-// 4. Mercadotecnia
-// ----------------------------------------------------
 export function OfertaMercadotecnia() {
   const breadcrumbs = [
     { name: 'Oferta Educativa', path: '#' },
@@ -343,11 +450,7 @@ export function OfertaMercadotecnia() {
         'Empresas transnacionales de retail',
         'Emprendimiento comercial y retail'
       ]}
-      materias={[
-        ['Introducción a la Mercadotecnia', 'Matemáticas Financieras', 'Comportamiento del Consumidor', 'Branding', 'Inglés I'],
-        ['Investigación de Mercados I', 'Marketing Digital I', 'Estrategias de Precios', 'Legislación de Negocios', 'Inglés II'],
-        ['Investigación de Mercados II', 'Marketing Digital II', 'Canales de Distribución', 'Publicidad y Promoción', 'Inglés III']
-      ]}
+      studyPlanCards={careerStudyPlanCards.negocios}
       galleryImages={careerGalleries.negocios}
       breadcrumbs={breadcrumbs}
     />
