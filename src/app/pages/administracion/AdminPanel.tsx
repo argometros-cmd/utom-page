@@ -18,8 +18,8 @@ import {
   FileText,
   LayoutDashboard
 } from 'lucide-react';
-import { adminNavigationCategories } from '../data/navigation';
-import { utomBrandMarkUrl } from '../constants/branding';
+import { adminNavigationCategories } from '../../data/navigation';
+import { utomBrandMarkUrl } from '../../constants/branding';
 
 const sectionIcons = {
   inicio: House,

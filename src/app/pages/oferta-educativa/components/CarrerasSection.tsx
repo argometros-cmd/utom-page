@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ImageWithFallback } from '../ui/ImageWithFallback';
+import { ImageWithFallback } from '../../../components/ui/ImageWithFallback';
 import { ChefHat, Code, Microscope, TrendingUp } from 'lucide-react';
 
 const carreras = [

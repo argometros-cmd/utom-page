@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { AspirantesSection } from '../../components/sections/AspirantesSection';
+import { AspirantesSection } from './components/AspirantesSection';
 import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
 import {
   Lightbulb,

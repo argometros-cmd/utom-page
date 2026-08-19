@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Lock, User, Eye, EyeOff, ArrowLeft } from 'lucide-react';
-import { utomBrandMarkUrl } from '../constants/branding';
+import { utomBrandMarkUrl } from '../../constants/branding';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);

@@ -1,5 +1,5 @@
 import { FileCheck, Calendar, UserCheck, BookOpen, Download, ArrowRight } from 'lucide-react';
-import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
+import { buildWhatsAppUrl, whatsappMessages } from '../../../data/contact';
 
 const requisitos = [
   {

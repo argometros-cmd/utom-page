@@ -1,5 +1,5 @@
 import { ArrowRight, Download } from 'lucide-react';
-import { buildWhatsAppUrl, whatsappMessages } from '../../data/contact';
+import { buildWhatsAppUrl, whatsappMessages } from '../../../data/contact';
 
 export function CallToAction() {
   return (

@@ -2,11 +2,11 @@ import React from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
 import { BookOpen, Compass, Briefcase, Award, Download } from 'lucide-react';
 import { ImageWithFallback } from '../../components/ui/ImageWithFallback';
-import studyPlanLinksRaw from '../../../data/map_curriculares.md?raw';
-import tiGalleryRaw from '../../../data/galleries/TI.md?raw';
-import biotecnologiaGalleryRaw from '../../../data/galleries/BIOTECNOLOGIA.md?raw';
-import gastronomiaGalleryRaw from '../../../data/galleries/GASTRONOMIA.md?raw';
-import negociosGalleryRaw from '../../../data/galleries/NEGOCIOS.md?raw';
+import studyPlanLinksRaw from './data/map_curriculares.md?raw';
+import tiGalleryRaw from './data/galleries/TI.md?raw';
+import biotecnologiaGalleryRaw from './data/galleries/BIOTECNOLOGIA.md?raw';
+import gastronomiaGalleryRaw from './data/galleries/GASTRONOMIA.md?raw';
+import negociosGalleryRaw from './data/galleries/NEGOCIOS.md?raw';
 
 interface StudyPlanCard {
   id: string;

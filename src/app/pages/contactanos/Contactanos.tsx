@@ -1,6 +1,6 @@
 import React from 'react';
 import { SubpageLayout } from '../../components/ui/SubpageLayout';
-import { ContactoSection } from '../../components/sections/ContactoSection';
+import { ContactoSection } from './components/ContactoSection';
 
 export default function ContactoPage() {
   const breadcrumbs = [

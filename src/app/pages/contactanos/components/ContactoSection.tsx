@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send, Facebook, MessageCircle, Instagram, Youtube, Video } from 'lucide-react';
-import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../data/contact';
+import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../../data/contact';
 
 export function ContactoSection() {
   const [formData, setFormData] = useState({

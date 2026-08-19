@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { ImageWithFallback } from '../ui/ImageWithFallback';
+import { ImageWithFallback } from '../../../components/ui/ImageWithFallback';
 import { Calendar, Trophy, Users, Bell } from 'lucide-react';
 
 const noticias = [

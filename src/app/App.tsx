@@ -1,18 +1,8 @@
 import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router';
 import { useEffect } from 'react';
-import { Header } from './components/layout/Header';
-import { HeroHighlightsSection, HeroSection } from './components/sections/HeroSection';
-import { CarrerasSection } from './components/sections/CarrerasSection';
-import { AspirantesSection } from './components/sections/AspirantesSection';
-import { NoticiasSection } from './components/sections/NoticiasSection';
-import { CallToAction } from './components/sections/CallToAction';
-import { ContactoSection } from './components/sections/ContactoSection';
-import { Footer } from './components/layout/Footer';
-import { ScrollToTop } from './components/layout/ScrollToTop';
-import { AccessibilityMenu } from './components/widgets/AccessibilityMenu';
-import { TomBotButton } from './components/widgets/TomBotButton';
-import Login from './pages/Login';
-import AdminPanel from './pages/AdminPanel';
+import InicioPage from './pages/inicio/Inicio';
+import Login from './pages/autenticacion/Login';
+import AdminPanel from './pages/administracion/AdminPanel';
 
 // Subpages
 import {
@@ -21,25 +11,26 @@ import {
   ConocenosDirectorio,
   ConocenosCampusMaravatio,
   ConocenosCampusZitacuaro
-} from './pages/subpages/Conocenos';
+} from './pages/conocenos/Conocenos';
 import {
   EstudiantesAspirantes,
   EstudiantesModelo,
   EstudiantesBecas
-} from './pages/subpages/Estudiantes';
-import DocentesPage from './pages/subpages/Docentes';
+} from './pages/estudiantes/Estudiantes';
+import DocentesPage from './pages/docentes/Docentes';
 import {
   OfertaTecnologias,
   OfertaBiotecnologia,
   OfertaGastronomia,
   OfertaMercadotecnia
-} from './pages/subpages/Oferta';
-import TransparenciaPage from './pages/subpages/Transparencia';
-import VinculacionPage, {
+} from './pages/oferta-educativa/OfertaEducativa';
+import TransparenciaPage from './pages/informacion-financiera/InformacionFinanciera';
+import {
   ServiciosDocumentacionEscolarPage,
   ServiciosTitulacionPage,
-} from './pages/subpages/ServiciosVinculacion';
-import ContactoPage from './pages/subpages/Contacto';
+} from './pages/servicios/Servicios';
+import VinculacionPage from './pages/vinculacion/Vinculacion';
+import ContactoPage from './pages/contactanos/Contactanos';
 
 function ScrollToHashElement() {
   const { hash } = useLocation();
@@ -69,27 +60,6 @@ function ScrollToTopOnRouteChange() {
   return null;
 }
 
-function LandingPage() {
-  return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <NoticiasSection />
-        <HeroHighlightsSection />
-        <CarrerasSection />
-        <AspirantesSection />
-        <CallToAction />
-        <ContactoSection />
-      </main>
-      <Footer />
-      <TomBotButton />
-      <AccessibilityMenu />
-      <ScrollToTop />
-    </>
-  );
-}
-
 export default function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 scroll-smooth transition-colors duration-300">
@@ -97,7 +67,7 @@ export default function App() {
         <ScrollToTopOnRouteChange />
         <ScrollToHashElement />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<InicioPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminPanel />} />
           
