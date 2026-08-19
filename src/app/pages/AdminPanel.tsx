@@ -28,7 +28,8 @@ const sectionIcons = {
   docentes: Users,
   oferta: BookOpen,
   transparencia: ShieldCheck,
-  servicios: Handshake,
+  servicios: FileText,
+  vinculacion: Handshake,
   contacto: Mail,
 } as const;
 

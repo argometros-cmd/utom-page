@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router';
 import { useEffect } from 'react';
 import { Header } from './components/layout/Header';
 import { HeroHighlightsSection, HeroSection } from './components/sections/HeroSection';
@@ -35,7 +35,7 @@ import {
   OfertaMercadotecnia
 } from './pages/subpages/Oferta';
 import TransparenciaPage from './pages/subpages/Transparencia';
-import ServiciosVinculacionPage, {
+import VinculacionPage, {
   ServiciosDocumentacionEscolarPage,
   ServiciosTitulacionPage,
 } from './pages/subpages/ServiciosVinculacion';
@@ -125,10 +125,17 @@ export default function App() {
           {/* Transparencia */}
           <Route path="/transparencia/:year" element={<TransparenciaPage />} />
           
-          {/* Servicios y Vinculación */}
-          <Route path="/servicios-vinculacion" element={<ServiciosVinculacionPage />} />
-          <Route path="/servicios-vinculacion/titulacion" element={<ServiciosTitulacionPage />} />
-          <Route path="/servicios-vinculacion/documentacion-escolar" element={<ServiciosDocumentacionEscolarPage />} />
+          {/* Servicios */}
+          <Route path="/servicios/titulacion" element={<ServiciosTitulacionPage />} />
+          <Route path="/servicios/documentacion-escolar" element={<ServiciosDocumentacionEscolarPage />} />
+
+          {/* Vinculación */}
+          <Route path="/vinculacion" element={<VinculacionPage />} />
+
+          {/* Compatibilidad con los enlaces anteriores */}
+          <Route path="/servicios-vinculacion" element={<Navigate to="/vinculacion" replace />} />
+          <Route path="/servicios-vinculacion/titulacion" element={<Navigate to="/servicios/titulacion" replace />} />
+          <Route path="/servicios-vinculacion/documentacion-escolar" element={<Navigate to="/servicios/documentacion-escolar" replace />} />
           
           {/* Contacto */}
           <Route path="/contacto" element={<ContactoPage />} />

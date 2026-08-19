@@ -91,9 +91,9 @@ function PromotoresCarousel() {
   );
 }
 
-export default function ServiciosVinculacionPage() {
+export default function VinculacionPage() {
   const breadcrumbs = [
-    { name: 'Servicios y Vinculación', path: '/servicios-vinculacion' }
+    { name: 'Vinculación', path: '/vinculacion' }
   ];
 
   const servicios = [
@@ -112,7 +112,7 @@ export default function ServiciosVinculacionPage() {
   ];
 
   return (
-    <SubpageLayout title="Servicios y Vinculación" breadcrumbs={breadcrumbs}>
+    <SubpageLayout title="Vinculación" breadcrumbs={breadcrumbs}>
       <div className="space-y-16">
         {/* Intro */}
         <div className="bg-[#0F5132]/5 dark:bg-[#D4A574]/5 border border-[#0F5132]/10 dark:border-[#D4A574]/10 rounded-3xl p-8 transition-colors duration-300">
@@ -163,8 +163,7 @@ export default function ServiciosVinculacionPage() {
 
 export function ServiciosTitulacionPage() {
   const breadcrumbs = [
-    { name: 'Servicios y Vinculación', path: '/servicios-vinculacion' },
-    { name: 'Titulación', path: '/servicios-vinculacion/titulacion' }
+    { name: 'Titulación', path: '/servicios/titulacion' }
   ];
 
   const rutasTitulacion = [
@@ -339,8 +338,7 @@ export function ServiciosDocumentacionEscolarPage() {
   const [openBajaSection, setOpenBajaSection] = useState<'temporal' | 'definitiva' | null>('temporal');
   const [openReincorporacionSection, setOpenReincorporacionSection] = useState<'temporal' | 'definitiva' | null>('temporal');
   const breadcrumbs = [
-    { name: 'Servicios y Vinculación', path: '/servicios-vinculacion' },
-    { name: 'Documentación Escolar', path: '/servicios-vinculacion/documentacion-escolar' }
+    { name: 'Documentación Escolar', path: '/servicios/documentacion-escolar' }
   ];
 
   const documentPrices: Record<string, string> = {

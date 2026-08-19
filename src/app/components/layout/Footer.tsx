@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, MessageCircle, Video } from 'lucide-react';
+import { Link } from 'react-router';
 import { buildWhatsAppUrl, contactInfo, whatsappMessages } from '../../data/contact';
 
 export function Footer() {
@@ -94,14 +95,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#vinculacion" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
+                <Link to="/vinculacion" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
                   Vinculación
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#servicios" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
+                <Link to="/servicios/documentacion-escolar" className="font-['Inter'] text-sm text-gray-300 dark:text-gray-400 hover:text-[#D4A574] transition-colors">
                   Servicios Escolares
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

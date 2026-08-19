@@ -1,0 +1,22 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.17.0
+2 info using node@v24.19.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\v4shzx\Desktop\utom-page\.npmrc
+5 silly config load:file:C:\Users\v4shzx\.npmrc
+6 silly config load:file:C:\Users\v4shzx\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install lightningcss-win32-x64-msvc@1.30.1
+8 verbose argv "install" "lightningcss-win32-x64-msvc@1.30.1" "--no-save" "--include" "optional" "--force" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\v4shzx\Desktop\utom-page\.npm-cache\_logs\2026-08-19T19_03_02_633Z-
+10 verbose logfile C:\Users\v4shzx\Desktop\utom-page\.npm-cache\_logs\2026-08-19T19_03_02_633Z-debug-0.log
+11 warn using --force Recommended protections disabled.
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with EACCES
+15 silly idealTree buildDeps
+16 silly fetch manifest lightningcss-win32-x64-msvc@1.30.1
+17 silly packumentCache full:https://registry.npmjs.org/lightningcss-win32-x64-msvc cache-miss
+18 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+19 http fetch GET https://registry.npmjs.org/lightningcss-win32-x64-msvc attempt 1 failed with EACCES
+20 http fetch GET https://registry.npmjs.org/npm attempt 2 failed with EACCES
+21 http fetch GET https://registry.npmjs.org/lightningcss-win32-x64-msvc attempt 2 failed with EACCES

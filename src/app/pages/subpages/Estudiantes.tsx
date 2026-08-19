@@ -14,6 +14,8 @@ import {
   Mail,
   PhoneCall,
   FileText,
+  Wifi,
+  ExternalLink,
   ChevronDown,
   ChevronUp
 } from 'lucide-react';
@@ -151,6 +153,22 @@ export function EstudiantesBecas() {
       icon: Award,
     },
     {
+      title: 'D4TA — Datos Gratis',
+      tag: 'Estatal / Conectividad',
+      tagColor: 'bg-violet-100 text-violet-800 dark:bg-violet-900/30 dark:text-violet-300',
+      image: 'https://new.utom.edu.mx/wp/wp-content/uploads/2026/08/d4ta.png',
+      description: 'Programa del Gobierno de Michoacán que brinda conectividad móvil gratuita a estudiantes de preparatorias y universidades públicas para apoyar sus actividades académicas.',
+      benefit: 'Tarjeta SIM con 4 GB de internet al mes, llamadas y redes sociales ilimitadas durante el semestre escolar en curso.',
+      requirements: [
+        'Estar inscrito en una institución pública de educación superior de Michoacán.',
+        'Registrarse del 3 al 28 de agosto de 2026 en el portal oficial de D4TA.',
+        'Contar con CURP y matrícula escolar para realizar o consultar la solicitud.',
+        'Acreditar la inscripción vigente para recibir y activar la tarjeta SIM en la universidad.'
+      ],
+      icon: Wifi,
+      officialUrl: 'https://data.michoacan.gob.mx/',
+    },
+    {
       title: 'Beca de Aprovechamiento / Excelencia Académica',
       tag: 'Interna UTOM',
       tagColor: 'bg-[#D4A574]/10 text-[#0F5132] dark:text-[#D4A574]',
@@ -237,11 +255,11 @@ export function EstudiantesBecas() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {becasData.slice(0, 2).map((beca, index) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {becasData.slice(0, 3).map((beca) => {
               return (
                 <div
-                  key={index}
+                  key={beca.title}
                 className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-150 dark:border-gray-800/80 p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                   <div>
@@ -294,6 +312,18 @@ export function EstudiantesBecas() {
                       </ul>
                     </div>
                   </div>
+
+                  {'officialUrl' in beca && beca.officialUrl && (
+                    <a
+                      href={beca.officialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0F5132] px-5 py-3 font-['Inter'] text-xs font-bold text-white transition-colors hover:bg-[#1a7552] focus:outline-none focus:ring-2 focus:ring-[#D4A574] focus:ring-offset-2 dark:bg-[#D4A574] dark:text-[#0F5132] dark:hover:bg-[#e0b98a]"
+                    >
+                      Ir al registro oficial
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  )}
                 </div>
               );
             })}

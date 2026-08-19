@@ -34,7 +34,8 @@ export function Header() {
     if (pathname.startsWith('/docentes')) return navigationLabels.docentes;
     if (pathname.startsWith('/oferta')) return navigationLabels.oferta;
     if (pathname.startsWith('/transparencia')) return navigationLabels.transparencia;
-    if (pathname.startsWith('/servicios-vinculacion')) return navigationLabels.servicios;
+    if (pathname.startsWith('/servicios')) return navigationLabels.servicios;
+    if (pathname.startsWith('/vinculacion')) return navigationLabels.vinculacion;
     if (pathname.startsWith('/contacto')) return navigationLabels.contacto;
     if (pathname.startsWith('/login') || pathname.startsWith('/admin')) return null;
     return null;

@@ -5,7 +5,8 @@ export const navigationLabels = {
   docentes: 'Docentes',
   oferta: 'Oferta Educativa',
   transparencia: 'Información Financiera',
-  servicios: 'Servicios y Vinculación',
+  servicios: 'Servicios',
+  vinculacion: 'Vinculación',
   contacto: 'Contáctanos',
 } as const;
 
@@ -17,6 +18,7 @@ export const adminNavigationCategories = [
   { id: 'oferta', name: navigationLabels.oferta },
   { id: 'transparencia', name: navigationLabels.transparencia },
   { id: 'servicios', name: navigationLabels.servicios },
+  { id: 'vinculacion', name: navigationLabels.vinculacion },
   { id: 'contacto', name: navigationLabels.contacto },
 ] as const;
 
